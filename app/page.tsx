@@ -5,7 +5,7 @@ import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
 import HeroSection from "@/components/HeroSection";
 import Schedule from "@/components/Schedule";
-import RSVPForm from "@/components/RSVPform";
+import RSVPForm from "@/components/RSVPForm";
 import LocationSection from "@/components/LocationSection";
 
 export default function Home() {
