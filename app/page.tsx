@@ -49,12 +49,12 @@ export default function Home() {
             <h2 className="text-2xl sm:text-3xl font-serif mb-6">With the Blessing of Our Parents</h2>
             <div className="grid sm:grid-cols-2 gap-6 sm:gap-8">
               <div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">Bride's Parents</h3>
-                <p>Mr. & Mrs. [Bride's Parents Names]</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">Brides Parents</h3>
+                <p>Mr. & Mrs. [Brides Parents Names]</p>
               </div>
               <div>
-                <h3 className="text-lg sm:text-xl font-semibold mb-2">Groom's Parents</h3>
-                <p>Mr. & Mrs. [Groom's Parents Names]</p>
+                <h3 className="text-lg sm:text-xl font-semibold mb-2">Grooms Parents</h3>
+                <p>Mr. & Mrs. [Grooms Parents Names]</p>
               </div>
             </div>
           </Card>
