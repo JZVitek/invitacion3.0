@@ -19,7 +19,7 @@ export default function RSVPForm() {
 
   return (
     <Card className='p-8 text-center z-1'>
-      <h2 className='text-3xl font-serif mb-6'>RSVP</h2>
+      <h2 className='text-3xl font-serif mb-6 texto'>RSVP</h2>
       <Dialog>
         <DialogTrigger asChild>
           <Button size='lg'>Responde ahora</Button>

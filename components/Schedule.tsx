@@ -12,7 +12,7 @@ const schedule = [
 export default function Schedule() {
   return (
     <Card className='p-6 sm:p-8'>
-      <h2 className='text-2xl sm:text-3xl font-serif text-center mb-6 sm:mb-8'>
+      <h2 className='text-2xl sm:text-3xl font-serif text-center mb-6 sm:mb-8 texto'>
         Itinerario
       </h2>
       <div className='max-w-md mx-auto'>
