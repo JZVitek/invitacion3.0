@@ -27,7 +27,7 @@ export default function HeroSection() {
             <span className="block text-4xl sm:text-5xl mt-2">Jesus</span>
           </h1>
           <div className="w-24 sm:w-32 h-[1px] bg-white/50 mx-auto"></div>
-          <p className="text-lg sm:text-xl font-light tracking-wider">November 7th, 2025</p>
+          <p className="text-lg sm:text-xl font-light tracking-wider">7 de Noviembre, 2025</p>
         </div>
         <CountdownTimer targetDate={weddingDate} />
       </div>

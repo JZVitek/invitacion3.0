@@ -16,7 +16,7 @@ export default function RSVPForm() {
       <h2 className="text-3xl font-serif mb-6">RSVP</h2>
       <Dialog>
         <DialogTrigger asChild>
-          <Button size="lg">Respond Now</Button>
+          <Button size="lg">Responde ahora</Button>
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
@@ -27,7 +27,7 @@ export default function RSVPForm() {
             setRsvpSubmitted(true);
           }}>
             <div>
-              <Label htmlFor="name">Your Name</Label>
+              <Label htmlFor="name">Nombre</Label>
               <Input id="name" required />
             </div>
             <div>
@@ -35,14 +35,14 @@ export default function RSVPForm() {
               <Input id="email" type="email" required />
             </div>
             <div>
-              <Label htmlFor="guests">Number of Guests</Label>
+              <Label htmlFor="guests">Numero de invitados</Label>
               <Input id="guests" type="number" min="1" max="4" required />
             </div>
             <div>
-              <Label htmlFor="message">Message (Optional)</Label>
+              <Label htmlFor="message">Mensaje (opcional)</Label>
               <Textarea id="message" />
             </div>
-            <Button type="submit" className="w-full">Submit RSVP</Button>
+            <Button type="submit" className="w-full">Enviar RSVP</Button>
           </form>
         </DialogContent>
       </Dialog>
