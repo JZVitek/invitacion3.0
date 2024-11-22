@@ -7,10 +7,12 @@ import HeroSection from '@/components/HeroSection';
 import Schedule from '@/components/Schedule';
 import RSVPForm from '@/components/RSVPForm';
 import LocationSection from '@/components/LocationSection';
+import ParticlesBackground from '@/components/particles-background';
 
 export default function Home() {
   return (
     <main className='min-h-screen bg-[#f8f5f0] text-gray-800'>
+      <ParticlesBackground />
       <HeroSection />
 
       {/* Details Section */}
