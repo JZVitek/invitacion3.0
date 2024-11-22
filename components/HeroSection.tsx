@@ -20,11 +20,11 @@ export default function HeroSection() {
           <h3 className="text-lg sm:text-xl font-light tracking-[0.2em] uppercase">Save the Date</h3>
           <div className="w-24 sm:w-32 h-[1px] bg-white/50 mx-auto"></div>
           <h1 className="font-serif">
-            <span className="block text-4xl sm:text-5xl mb-2">Karime</span>
+            <span className="block text-6xl sm:text-5xl mb-2">Karime</span>
             <span className="inline-block w-6 sm:w-8 h-[1px] bg-white/50 mx-3 sm:mx-4 align-middle"></span>
-            <span className="text-2xl sm:text-3xl">&</span>
+            <span className="text-3xl sm:text-3xl">&</span>
             <span className="inline-block w-6 sm:w-8 h-[1px] bg-white/50 mx-3 sm:mx-4 align-middle"></span>
-            <span className="block text-4xl sm:text-5xl mt-2">Jesus</span>
+            <span className="block text-6xl sm:text-5xl mt-2">Jesus</span>
           </h1>
           <div className="w-24 sm:w-32 h-[1px] bg-white/50 mx-auto"></div>
           <p className="text-lg sm:text-xl font-light tracking-wider">7 de Noviembre, 2025</p>
