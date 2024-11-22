@@ -33,7 +33,7 @@ export default function LocationSection() {
   return (
     <Card className='p-6 sm:p-8'>
       <h2 className='text-2xl sm:text-3xl font-serif text-center mb-6 sm:mb-8'>
-        Location
+        Ubicación
       </h2>
       <div className='grid sm:grid-cols-2 gap-8'>
         {locations.map((location) => (
