@@ -8,6 +8,8 @@ import Schedule from '@/components/Schedule';
 import RSVPForm from '@/components/RSVPForm';
 import LocationSection from '@/components/LocationSection';
 import ParticlesBackground from '@/components/particles-background';
+import PhotoCarousel from '@/components/PhotoCarousel';
+import RegistryModal from '@/components/RegistryModal';
 
 export default function Home() {
   return (
@@ -87,16 +89,15 @@ export default function Home() {
               </div>
             </div>
 
+            <PhotoCarousel />
+
             <div className='grid sm:grid-cols-2 gap-6 sm:gap-8 text-center'>
               <div>
                 <h3 className='text-lg sm:text-xl font-semibold mb-2'>
                   Registry
                 </h3>
                 <p>View our gift registry</p>
-                <Button variant='outline' className='mt-2'>
-                  <Gift className='w-4 h-4 mr-2' />
-                  View Registry
-                </Button>
+                <RegistryModal />
               </div>
               <div>
                 <h3 className='text-lg sm:text-xl font-semibold mb-2'>
