@@ -19,7 +19,9 @@ export default function Home() {
       <section className='py-12 sm:py-20 px-4'>
         <div className='max-w-4xl mx-auto space-y-8 sm:space-y-12'>
           <Card className='p-6 sm:p-8 text-center space-y-6'>
-            <h2 className='text-2xl sm:text-3xl font-serif texto'>Nuestra Boda</h2>
+            <h2 className='text-2xl sm:text-3xl font-serif texto'>
+              Nuestra Boda
+            </h2>
             <div className='grid sm:grid-cols-2 gap-8'>
               <div>
                 <h3 className='text-lg sm:text-xl font-semibold mb-2'>
@@ -81,6 +83,7 @@ export default function Home() {
               <p className='mb-6'>Dress Code: Formal</p>
               <div className='flex justify-center gap-4 mb-6'>
                 <div className='w-8 h-8 rounded-full bg-[#000000]' />
+                
               </div>
             </div>
 
@@ -109,7 +112,9 @@ export default function Home() {
 
           {/* Contact */}
           <Card className='p-6 sm:p-8 text-center'>
-            <h2 className='text-2xl sm:text-3xl font-serif mb-6 texto'>Preguntas?</h2>
+            <h2 className='text-2xl sm:text-3xl font-serif mb-6 texto'>
+              Preguntas?
+            </h2>
             <div className='flex flex-col sm:flex-row justify-center gap-4 sm:gap-8'>
               <div className='flex items-center justify-center gap-2'>
                 <Phone className='w-4 h-4' />
