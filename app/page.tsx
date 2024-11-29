@@ -1,6 +1,16 @@
 'use client';
 
-import { Calendar, Clock, Gift, Hash, Mail, Phone } from 'lucide-react';
+import {
+  Calendar,
+  Clock,
+  Gift,
+  Hash,
+  Mail,
+  Phone,
+  MapPin,
+  Church,
+  BellElectric,
+} from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import HeroSection from '@/components/HeroSection';
@@ -26,6 +36,9 @@ export default function Home() {
             </h2>
             <div className='grid sm:grid-cols-2 gap-8'>
               <div>
+                <div className='w-10 h-10 sm:w-12 sm:h-12  flex items-center justify-center mx-auto'>
+                  <Church className='w-9 h-9 sm:w-8 sm:h-8 text-black' />
+                </div>
                 <h3 className='text-lg sm:text-xl font-semibold mb-2'>
                   Ceremonia
                 </h3>
@@ -34,16 +47,19 @@ export default function Home() {
                 </p>
                 <p className='flex items-center justify-center gap-2'>
                   <Clock className='w-4 h-4' />
-                  7:00 PM
+                  5:00 PM
                 </p>
               </div>
               <div>
+                <div className='w-10 h-10 sm:w-12 sm:h-12 flex items-center justify-center mx-auto'>
+                  <BellElectric className='w-9 h-9 sm:w-8 sm:h-8 text-black' />
+                </div>
                 <h3 className='text-lg sm:text-xl font-semibold mb-2'>
                   Recepción
                 </h3>
                 <p className='flex items-center justify-center gap-2'>
                   <Clock className='w-4 h-4' />
-                  9:00 PM
+                  8:00 PM
                 </p>
               </div>
             </div>
@@ -63,13 +79,13 @@ export default function Home() {
                 <h3 className='text-lg sm:text-xl font-semibold mb-2'>
                   Padres de la novia
                 </h3>
-                <p>Sr y Sra. [Brides Parents Names]</p>
+                <p>Sr y Sra. [Leticia Alday y Felix Alday]</p>
               </div>
               <div>
                 <h3 className='text-lg sm:text-xl font-semibold mb-2'>
                   Padres del novio
                 </h3>
-                <p>Sr y Sra. [Grooms Parents Names]</p>
+                <p>Sr y Sra. [Jesus Zamora & Rosa Maria Ayala]</p>
               </div>
             </div>
           </Card>
@@ -85,7 +101,6 @@ export default function Home() {
               <p className='mb-6'>Dress Code: Formal</p>
               <div className='flex justify-center gap-4 mb-6'>
                 <div className='w-8 h-8 rounded-full bg-[#000000]' />
-                
               </div>
             </div>
 
@@ -123,7 +138,7 @@ export default function Home() {
               </div>
               <div className='flex items-center justify-center gap-2'>
                 <Mail className='w-4 h-4' />
-                <span>[karimeyjesus@gmail.com]</span>
+                <span>[karimeyjesus5@gmail.com]</span>
               </div>
             </div>
           </Card>

@@ -22,13 +22,13 @@ export default function HeroSection() {
           </h3>
           <div className='w-24 sm:w-32 h-[1px] bg-white/50 mx-auto'></div>
           <h1 className='font-serif'>
-            <span className='block text-8xl sm:text-7xl mb-2 meow-script-regular'>
+            <span className='block text-9xl sm:text-8xl mb-2 meow-script-regular'>
               Karime
             </span>
             <span className='inline-block w-6 sm:w-8 h-[1px] bg-white/50 mx-3 sm:mx-4 align-middle'></span>
-            <span className='text-5xl sm:text-5xl meow-script-regular'>&</span>
+            <span className='text-6xl sm:text-6xl meow-script-regular'>&</span>
             <span className='inline-block w-6 sm:w-8 h-[1px] bg-white/50 mx-3 sm:mx-4 align-middle'></span>
-            <span className='block text-8xl sm:text-7xl mt-2 meow-script-regular'>Jesus</span>
+            <span className='block text-9xl sm:text-8xl mt-2 meow-script-regular'>Jesus</span>
           </h1>
           <div className='w-24 sm:w-32 h-[1px] bg-white/50 mx-auto'></div>
           <p className='text-lg sm:text-xl font-light tracking-wider texto'>

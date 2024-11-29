@@ -1,11 +1,11 @@
-import { Clock, Gift, Heart } from 'lucide-react';
+import { CakeSlice, Clock, Gift, Heart } from 'lucide-react';
 import { Card } from '@/components/ui/card';
 
 const schedule = [
   { time: '21:00', event: 'Guest Arrival', icon: Clock },
   { time: '21:30', event: 'Ceremony', icon: Heart },
   { time: '22:30', event: 'Reception', icon: Gift },
-  { time: '23:30', event: 'Cake Cutting', icon: Gift },
+  { time: '23:30', event: 'Cake Cutting', icon: CakeSlice },
   { time: '02:00', event: 'Farewell', icon: Heart },
 ];
 
