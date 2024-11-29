@@ -30,7 +30,7 @@ const ParticlesBackground = () => {
   }, []);
 
   const particlesLoaded = async (container?: Container): Promise<void> => {
-    console.log(container);
+    //console.log(container);
   };
 
   const options: ISourceOptions = useMemo(
@@ -70,7 +70,7 @@ const ParticlesBackground = () => {
           color: '#ffffff',
           distance: 150,
           enable: false,
-          opacity: 0.5,
+          opacity: 0.7,
           width: 1,
         },
         move: {
@@ -87,10 +87,10 @@ const ParticlesBackground = () => {
           density: {
             enable: true,
           },
-          value: 80,
+          value: 60,
         },
         opacity: {
-          value: 0.2,
+          value: 0.1,
         },
         shape: {
           type: 'circle',
