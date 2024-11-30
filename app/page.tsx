@@ -20,6 +20,7 @@ import LocationSection from '@/components/LocationSection';
 import ParticlesBackground from '@/components/particles-background';
 import PhotoCarousel from '@/components/PhotoCarousel';
 import RegistryModal from '@/components/RegistryModal';
+import GodparentsSection from '@/components/GodParentsSection';
 
 export default function Home() {
   return (
@@ -69,6 +70,8 @@ export default function Home() {
 
           <Schedule />
 
+          <GodparentsSection />
+
           {/* Parents Section */}
           <Card className='p-6 sm:p-8 text-center'>
             <h2 className='text-2xl sm:text-3xl font-serif mb-6 texto'>
@@ -89,6 +92,9 @@ export default function Home() {
               </div>
             </div>
           </Card>
+
+          {/* Godparents Section */}
+          
 
           <RSVPForm />
 
@@ -125,6 +131,8 @@ export default function Home() {
               </div>
             </div>
           </Card>
+
+          <PhotoCarousel />
 
           {/* Contact */}
           <Card className='p-6 sm:p-8 text-center'>
