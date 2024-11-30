@@ -20,7 +20,7 @@ import LocationSection from '@/components/LocationSection';
 import ParticlesBackground from '@/components/particles-background';
 import PhotoCarousel from '@/components/PhotoCarousel';
 import RegistryModal from '@/components/RegistryModal';
-import GodparentsSection from '@/components/GodParentsSection';
+import GodparentsSection from '@/components/GodparentsSection';
 
 export default function Home() {
   return (
