@@ -28,11 +28,11 @@ export default function HeroSection() {
             <span className='inline-block w-6 sm:w-8 h-[1px] bg-white/50 mx-3 sm:mx-4 align-middle'></span>
             <span className='text-6xl sm:text-6xl meow-script-regular'>&</span>
             <span className='inline-block w-6 sm:w-8 h-[1px] bg-white/50 mx-3 sm:mx-4 align-middle'></span>
-            <span className='block text-9xl sm:text-8xl mt-2 meow-script-regular'>Jesus</span>
+            <span className='block text-9xl sm:text-8xl mt-2 meow-script-regular'>Jesús</span>
           </h1>
           <div className='w-24 sm:w-32 h-[1px] bg-white/50 mx-auto'></div>
           <p className='text-lg sm:text-xl font-light tracking-wider texto'>
-            7 de Noviembre, 2025
+            9 de Noviembre, 2025
           </p>
         </div>
         <CountdownTimer targetDate={weddingDate} />
