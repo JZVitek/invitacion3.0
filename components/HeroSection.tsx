@@ -3,7 +3,7 @@
 import CountdownTimer from './CountdownTimer';
 
 export default function HeroSection() {
-  const weddingDate = new Date('2025-11-07T21:00:00');
+  const weddingDate = new Date('2025-11-09T21:00:00');
 
   return (
     <section className='relative min-h-[100dvh] flex items-center justify-center'>

@@ -44,7 +44,7 @@ export default function Home() {
                   Ceremonia
                 </h3>
                 <p className='flex items-center justify-center gap-2'>
-                  <Calendar className='w-4 h-4' />7 de Noviembre, 2025
+                  <Calendar className='w-4 h-4' />9 de Noviembre, 2025
                 </p>
                 <p className='flex items-center justify-center gap-2'>
                   <Clock className='w-4 h-4' />
