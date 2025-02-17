@@ -95,3 +95,13 @@
   font-style: normal;
 }
 
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+}
+
+* {
+  box-sizing: border-box; /* Asegura que el padding y el border se incluyan en el ancho y alto total de los elementos */
+}
