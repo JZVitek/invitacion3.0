@@ -84,7 +84,7 @@ import RegistryModal from './RegistryModal';
       <Dialog>
         <DialogTrigger asChild>
           <Button
-          className='text-xl'
+          className='text-2xl'
             size='lg'
             onClick={() => {
               setSuccessMessage('');
@@ -96,23 +96,23 @@ import RegistryModal from './RegistryModal';
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle>RSVP para nuestra boda</DialogTitle>
-            <DialogDescription>
+            <DialogTitle className='text-4xl'>RSVP para nuestra boda</DialogTitle>
+            <DialogDescription className='text-2xl'>
               Por favor, completa el siguiente formulario para confirmar tu
               asistencia.
             </DialogDescription>
           </DialogHeader>
           <form className='space-y-4' onSubmit={handleSubmit}>
             <div>
-              <Label htmlFor='name'>Nombre</Label>
+              <Label className='text-xl' htmlFor='name'>Nombre</Label>
               <Input id='name' name='name' required />
             </div>
             <div>
-              <Label htmlFor='email'>Correo Electrónico</Label>
+              <Label className='text-xl' htmlFor='email'>Correo Electrónico</Label>
               <Input id='email' name='email' type='email' required />
             </div>
             <div>
-              <Label htmlFor='guests'>Número de Invitados</Label>
+              <Label className='text-xl' htmlFor='guests'>Número de Invitados</Label>
               <Input
                 id='guests'
                 name='guests'
@@ -123,10 +123,10 @@ import RegistryModal from './RegistryModal';
               />
             </div>
             <div>
-              <Label htmlFor='message'>Mensaje (opcional)</Label>
+              <Label className='text-xl' htmlFor='message'>Mensaje (opcional)</Label>
               <Textarea id='message' name='message' />
             </div>
-            <Button type='submit' className='w-full'>
+            <Button type='submit' className='w-full text-2xl'>
               Enviar RSVP
             </Button>
           </form>
