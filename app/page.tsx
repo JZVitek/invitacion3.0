@@ -74,21 +74,21 @@ export default function Home() {
 
           {/* Parents Section */}
           <Card className='p-6 sm:p-8 text-center'>
-            <h2 className='text-2xl sm:text-3xl font-serif mb-6 texto'>
+            <h2 className='text-5xl sm:text-5xl font-serif mb-6 texto'>
               Con la bendición de nuestros padres
             </h2>
             <div className='grid sm:grid-cols-2 gap-6 sm:gap-8'>
               <div>
-                <h3 className='text-lg sm:text-xl font-semibold mb-2'>
+                <h3 className='text-2xl sm:text-3xl font-semibold mb-2'>
                   Padres de la novia
                 </h3>
-                <p>Sr y Sra. [Leticia Alday y Felix Alday]</p>
+                <p className='text-xl'>Sr y Sra. Leticia Alday y Felix Alday</p>
               </div>
               <div>
-                <h3 className='text-lg sm:text-xl font-semibold mb-2'>
+                <h3 className='text-2xl sm:text-3xl font-semibold mb-2'>
                   Padres del novio
                 </h3>
-                <p>Sr y Sra. [Jesus Zamora & Rosa Maria Ayala]</p>
+                <p className='text-xl'>Sr y Sra. Jesus Zamora & Rosa Maria Ayala</p>
               </div>
             </div>
           </Card>
