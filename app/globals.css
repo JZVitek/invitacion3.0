@@ -75,21 +75,22 @@
 @layer base {
   * {
     @apply border-border;
-    font-family: "Edu AU VIC WA NT Pre", serif;
+    font-family: "Dancing Script", cursive;
   }
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background ;
   }
 }
 
-.meow-script-regular {
-  font-family: "Meow Script", serif;
-  font-weight: 400;
+.dancing-script-text {
+  font-family: "Dancing Script", cursive;
+  font-optical-sizing: auto;
+  font-weight: 400rem;
   font-style: normal;
 }
 
 .texto {
-  font-family: "Edu AU VIC WA NT Pre", serif;
+  font-family: "Dancing Script", cursive;
   font-optical-sizing: auto;
   font-weight: 700;
   font-style: normal;
@@ -99,7 +100,7 @@ html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  overflow-x: hidden; /* Evita el desbordamiento horizontal */
+  overflow-x: hidden;
 }
 
 * {

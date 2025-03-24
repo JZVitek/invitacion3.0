@@ -18,12 +18,9 @@ export default function RootLayout({
     <html lang='en'>
       <head>
         <link rel='preconnect' href='https://fonts.googleapis.com' />
+        <link rel='preconnect' href='https://fonts.gstatic.com' />
         <link
-          rel='preconnect'
-          href='https://fonts.gstatic.com'
-        />
-        <link
-          href='https://fonts.googleapis.com/css2?family=Allura&family=Dancing+Script:wght@400..700&family=Edu+AU+VIC+WA+NT+Pre:wght@400..700&family=Meow+Script&display=swap'
+          href='https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400..700&display=swap'
           rel='stylesheet'
         />
       </head>

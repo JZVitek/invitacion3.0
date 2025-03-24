@@ -31,7 +31,7 @@ const photos = [
 
 export default function PhotoCarousel() {
   return (
-    <div className='w-full max-w-3xl mx-auto'>
+    <div className='w-full max-w-4xl mx-auto'>
       <Carousel
         opts={{
           align: 'start',

@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import {
   Dialog,
   DialogContent,
@@ -14,12 +14,14 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
+import RegistryModal from './RegistryModal';
 
-export default function RSVPForm() {
+  const RSVPForm = () => {
   const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
   const [codigoInvalido, setCodigoInvalido] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
+  const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar la visibilidad del modal
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -36,7 +38,7 @@ export default function RSVPForm() {
     const message = target.message.value;
 
     const response = await fetch(
-      'https://script.google.com/macros/s/AKfycbyYqJwygikDESx_J3tm9u_gjeBKelW2mHixQpZXEl__PUB8Cc_SbhUWsdBD_dcs78V9/exec',
+      'https://script.google.com/macros/s/AKfycbwDQuisp2uJ9zGhomJBJ5tTqLIw8_3CktCerJY4GTsSuN9H_7nMWuddORh0O_9xNa_n/exec',
       {
         mode: 'no-cors',
         method: 'POST',
@@ -67,12 +69,22 @@ export default function RSVPForm() {
     }
   };
 
+  useEffect(() => {
+    if(successMessage) {
+      const timer = setTimeout(() => {
+        setIsModalOpen(false);
+    }, 3000);
+    return () => clearTimeout(timer);
+    }
+  }, [successMessage]);
+
   return (
     <Card className='p-8 text-center z-1'>
-      <h2 className='text-3xl font-serif mb-6 texto'>RSVP</h2>
+      <h2 className='text-5xl font-serif mb-6 texto'>¡Confirma tu asistencia aqui!</h2>
       <Dialog>
         <DialogTrigger asChild>
           <Button
+          className='text-xl'
             size='lg'
             onClick={() => {
               setSuccessMessage('');
@@ -124,6 +136,16 @@ export default function RSVPForm() {
           {errorMessage && <p className='text-red-500 mt-4'>{errorMessage}</p>}
         </DialogContent>
       </Dialog>
+    {/* Registry Section */}
+    <div className='mt-8'>
+        <h3 className='text-4xl sm:text-4xl font-semibold mb-2'>
+          ¿Te gustaría hacenos un regalo?
+        </h3>
+        <p className='mb-4 text-lg'>puedes hacerlo a través de una transferencia bancaria o en el dia de la boda</p>
+        <RegistryModal />
+      </div>
     </Card>
   );
 }
+
+export default RSVPForm;

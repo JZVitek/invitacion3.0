@@ -31,17 +31,17 @@ export default function RegistryModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button variant='outline'>
+        <Button variant='outline' className='text-xl'>
           <Gift className='w-4 h-4 mr-2' />
-          View Registry
+          Click aquí para ver detalles
         </Button>
       </DialogTrigger>
       <DialogContent className='sm:max-w-md'>
         <DialogHeader>
-          <DialogTitle className='text-center texto text-2xl'>
+          <DialogTitle className='text-center texto text-4xl'>
             Mesa de Regalos
           </DialogTitle>
-          <DialogDescription className='text-center'>
+          <DialogDescription className='text-center text-2xl'>
             Gracias por considerar hacernos un regalo. Aquí están los detalles
             de nuestra cuenta:
           </DialogDescription>
@@ -92,7 +92,7 @@ export default function RegistryModal() {
           )}
           <div className='flex items-center gap-2 text-sm text-muted-foreground'>
             <CreditCard className='h-4 w-4' />
-            <p>
+            <p className='text-lg'>
               Los datos bancarios son solo para transferencias nacionales en
               México.
             </p>
