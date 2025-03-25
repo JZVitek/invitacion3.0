@@ -57,8 +57,8 @@ export default function LocationSection() {
             <Image
                 src={location.image}
                 alt={location.name}
-                layout='fill'
-                objectFit='cover'
+                fill
+                style={{ objectFit: 'cover' }}
                 className='transition-transform duration-300 hover:scale-110'
               />
               <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300' />
