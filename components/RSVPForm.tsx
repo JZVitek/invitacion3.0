@@ -16,7 +16,7 @@ import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import RegistryModal from './RegistryModal';
 
-  const RSVPForm = () => {
+const RSVPForm = () => {
   const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
   const [codigoInvalido, setCodigoInvalido] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -56,10 +56,10 @@ import RegistryModal from './RegistryModal';
       );
       setErrorMessage('');
 
-      //cerrar el dialogo despues de enviar el formulario despues de 3 segundos
+      // Cerrar el diálogo después de 3 segundos
       setTimeout(() => {
-        setRsvpSubmitted(false);
-      }, 3000);
+        setIsModalOpen(false);
+      }, 1000);
     } else {
       setCodigoInvalido(true);
       setErrorMessage(
@@ -70,25 +70,28 @@ import RegistryModal from './RegistryModal';
   };
 
   useEffect(() => {
-    if(successMessage) {
+    if (successMessage) {
       const timer = setTimeout(() => {
         setIsModalOpen(false);
-    }, 3000);
-    return () => clearTimeout(timer);
+      }, 3000);
+      return () => clearTimeout(timer);
     }
   }, [successMessage]);
 
   return (
     <Card className='p-8 text-center z-1'>
-      <h2 className='text-5xl font-serif mb-6 texto'>¡Confirma tu asistencia aqui!</h2>
-      <Dialog>
+      <h2 className='text-5xl font-serif mb-6 texto'>
+        ¡Confirma tu asistencia aqui!
+      </h2>
+      <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogTrigger asChild>
           <Button
-          className='text-2xl'
+            className='text-2xl'
             size='lg'
             onClick={() => {
               setSuccessMessage('');
               setErrorMessage('');
+              setIsModalOpen(true);
             }}
           >
             Confirmar Asistencia
@@ -96,7 +99,9 @@ import RegistryModal from './RegistryModal';
         </DialogTrigger>
         <DialogContent>
           <DialogHeader>
-            <DialogTitle className='text-4xl'>RSVP para nuestra boda</DialogTitle>
+            <DialogTitle className='text-4xl'>
+              RSVP para nuestra boda
+            </DialogTitle>
             <DialogDescription className='text-2xl'>
               Por favor, completa el siguiente formulario para confirmar tu
               asistencia.
@@ -104,27 +109,36 @@ import RegistryModal from './RegistryModal';
           </DialogHeader>
           <form className='space-y-4' onSubmit={handleSubmit}>
             <div>
-              <Label className='text-xl' htmlFor='name'>Nombre</Label>
-              <Input id='name' name='name' required />
+              <Label className='text-xl' htmlFor='name'>
+                Nombre
+              </Label>
+              <Input id='name' name='name' className='text-xl' required />
             </div>
             <div>
-              <Label className='text-xl' htmlFor='email'>Correo Electrónico</Label>
-              <Input id='email' name='email' type='email' required />
+              <Label className='text-xl' htmlFor='email'>
+                Correo Electrónico
+              </Label>
+              <Input id='email' name='email' type='email' className='text-xl' required />
             </div>
             <div>
-              <Label className='text-xl' htmlFor='guests'>Número de Invitados</Label>
+              <Label className='text-xl' htmlFor='guests'>
+                Número de Invitados
+              </Label>
               <Input
                 id='guests'
                 name='guests'
                 type='number'
                 min='1'
                 max='10'
+                className='text-xl'
                 required
               />
             </div>
             <div>
-              <Label className='text-xl' htmlFor='message'>Mensaje (opcional)</Label>
-              <Textarea id='message' name='message' />
+              <Label className='text-xl' htmlFor='message'>
+                Mensaje (opcional)
+              </Label>
+              <Textarea id='message' name='message' className='text-xl' />
             </div>
             <Button type='submit' className='w-full text-2xl'>
               Enviar RSVP
@@ -136,16 +150,19 @@ import RegistryModal from './RegistryModal';
           {errorMessage && <p className='text-red-500 mt-4'>{errorMessage}</p>}
         </DialogContent>
       </Dialog>
-    {/* Registry Section */}
-    <div className='mt-8'>
+      {/* Registry Section */}
+      <div className='mt-8'>
         <h3 className='text-4xl sm:text-4xl font-semibold mb-2'>
           ¿Te gustaría hacenos un regalo?
         </h3>
-        <p className='mb-4 text-lg'>puedes hacerlo a través de una transferencia bancaria o en el dia de la boda</p>
+        <p className='mb-4 text-lg'>
+          puedes hacerlo a través de una transferencia bancaria o en el dia de
+          la boda
+        </p>
         <RegistryModal />
       </div>
     </Card>
   );
-}
+};
 
 export default RSVPForm;
