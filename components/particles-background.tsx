@@ -6,24 +6,14 @@ import {
   MoveDirection,
   OutMode,
 } from '@tsparticles/engine';
-import { loadAll } from '@tsparticles/all'; // if you are going to use `loadAll`, install the "@tsparticles/all" package too.
-// import { loadFull } from "tsparticles"; // if you are going to use `loadFull`, install the "tsparticles" package too.
-//import { loadSlim } from "@tsparticles/slim"; // if you are going to use `loadSlim`, install the "@tsparticles/slim" package too.
-// import { loadBasic } from "@tsparticles/basic"; // if you are going to use `loadBasic`, install the "@tsparticles/basic" package too.
+import { loadAll } from '@tsparticles/all';
 
 const ParticlesBackground = () => {
   const [init, setInit] = useState(false);
 
-  // this should be run only once per application lifetime
   useEffect(() => {
     initParticlesEngine(async (engine) => {
-      // you can initiate the tsParticles instance (engine) here, adding custom shapes or presets
-      // this loads the tsparticles package bundle, it's the easiest method for getting everything ready
-      // starting from v2 you can add only the features you need reducing the bundle size
       await loadAll(engine);
-      //await loadFull(engine);
-      //await loadSlim(engine);
-      //await loadBasic(engine);
     }).then(() => {
       setInit(true);
     });
@@ -37,7 +27,7 @@ const ParticlesBackground = () => {
     () => ({
       background: {
         color: {
-          value: 'transparent',
+          value: '#f8f5f0', // Fondo igual al de page.tsx
         },
       },
       fpsLimit: 120,
@@ -64,10 +54,10 @@ const ParticlesBackground = () => {
       },
       particles: {
         color: {
-          value: '#000000',
+          value: '#333333', // Cambia el color de las partículas a un gris oscuro
         },
         links: {
-          color: '#ffffff',
+          color: '#333333', // Cambia el color de los enlaces (si están habilitados)
           distance: 150,
           enable: false,
           opacity: 0.7,
@@ -90,13 +80,13 @@ const ParticlesBackground = () => {
           value: 60,
         },
         opacity: {
-          value: 0.1,
+          value: 0.5, // Ajusta la opacidad para que las partículas sean más visibles
         },
         shape: {
           type: 'circle',
         },
         size: {
-          value: { min: 1, max: 5 },
+          value: { min: 2, max: 6 }, // Aumenta el tamaño de las partículas si es necesario
         },
       },
       detectRetina: true,
@@ -110,6 +100,15 @@ const ParticlesBackground = () => {
         id='tsparticles'
         particlesLoaded={particlesLoaded}
         options={options}
+        style={{
+          position: 'absolute', // Asegura que las partículas estén en el fondo
+          top: 0,
+          left: 0,
+          width: '100%',
+          height: '100%',
+          pointerEvents: 'none', // Permite que los clics pasen a través del componente
+          zIndex: -1, // Envía las partículas al fondo
+        }}
       />
     );
   }

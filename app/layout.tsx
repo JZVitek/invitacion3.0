@@ -6,7 +6,7 @@ const inter = Inter({ subsets: ['latin'] });
 
 export const metadata: Metadata = {
   title: 'Boda Karime y Jesus',
-  description: 'Wedding website for Karime and Jesus',
+  description: 'Boda de Karime y Jesus',
 };
 
 export default function RootLayout({

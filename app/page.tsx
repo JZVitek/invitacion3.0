@@ -24,8 +24,12 @@ import GodparentsSection from '@/components/GodparentsSection';
 
 export default function Home() {
   return (
-    <main className='min-h-screen bg-[#f8f5f0] text-gray-800'>
-      <ParticlesBackground />
+    <main className='relative min-h-screen bg-[#f8f5f0] text-gray-800'>
+      <div className='absolute inset-0'>
+        <ParticlesBackground />
+      </div>
+      <div className='relative z-10'>
+
       <HeroSection />
 
       {/* Details Section */}
@@ -127,7 +131,28 @@ export default function Home() {
             </div>
           </Card>
 
-          <PhotoCarousel />
+          {/* Additional Info */}
+          <Card className='p-6 sm:p-8 space-y-6'>
+            <div className='text-center'>
+              <h2 className='text-4xl sm:text-4xl font-serif mb-4 texto'>
+                Nuestra Boda
+              </h2>
+            </div>
+
+            <PhotoCarousel />
+
+            <div className='flex flex-col items-center justify-center text-center gap-4'>
+              <div className='flex flex-col items-center justify-center gap-4'>
+                <h3 className='text-3xl sm:text-4xl font-semibold mb-2'>
+                  Compartenos tus fotos con el hashtag
+                </h3>
+                <p className='flex items-center justify-center gap-2 text-xl'>
+                  <Hash className='w-4 h-4 text-2xl'/>
+                  KarimeAndJesus2024
+                </p>
+              </div>
+            </div>
+          </Card>
 
           {/* Contact */}
           <Card className='p-6 sm:p-8 text-center'>
@@ -147,6 +172,7 @@ export default function Home() {
           </Card>
         </div>
       </section>
+      </div>
     </main>
   );
 }
