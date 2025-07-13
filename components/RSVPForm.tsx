@@ -38,7 +38,7 @@ const RSVPForm = () => {
     const message = target.message.value;
 
     const response = await fetch(
-      'https://script.google.com/macros/s/AKfycbyI5uDNoo2lvP_9QttnaSYa4vEtk5E4Gs9pCf5gVtw0MyIZ6hbOIE-j5XSxwaAHdssQkA/exec',
+      'https://script.google.com/macros/s/AKfycbywMCOvG35yNynnlY_QKd7ad33OPAiXjVhnLlVxwVnum5UbbLIgKiPVNayna-wXrwgZCg/exec',
       {
         mode: 'no-cors',
         method: 'POST',
