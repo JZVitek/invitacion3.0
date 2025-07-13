@@ -21,6 +21,7 @@ import ParticlesBackground from '@/components/particles-background';
 import PhotoCarousel from '@/components/PhotoCarousel';
 import RegistryModal from '@/components/RegistryModal';
 import GodparentsSection from '@/components/GodparentsSection';
+import Music from '@/components/Music';
 
 export default function Home() {
   return (
@@ -99,7 +100,6 @@ export default function Home() {
 
           {/* Godparents Section */}
           
-
           <RSVPForm />
 
           {/* Additional Info */}
@@ -172,6 +172,10 @@ export default function Home() {
           </Card>
         </div>
       </section>
+      </div>
+      {/* Botón flotante de música */}
+      <div className="fixed bottom-6 right-6 z-50 rounded-full shadow-lg p-2 flex items-center justify-center transition hover:bg-white/80">
+        <Music />
       </div>
     </main>
   );

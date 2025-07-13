@@ -18,19 +18,19 @@ const godparents: Godparent[] = [
   },
   {
     role: 'Padrinos de Arras',
-    names: ['Sr. y Sra. Ibarra'],
+    names: ['Ericka y Adrian Villamar'],
     image:
       'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&auto=format&fit=crop&q=80',
   },
   {
     role: 'Padrinos de Lazo',
-    names: ['Sr. y Sra. Zamora'],
+    names: ['Lupita y Marco Ibarra'],
     image:
       'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=800&auto=format&fit=crop&q=80',
   },
   {
     role: 'Padrinos de Anillos',
-    names: ['Sr. y Sra. Alday'],
+    names: ['Dayana y Roman Alday'],
     image:
       'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop&q=80',
   },
