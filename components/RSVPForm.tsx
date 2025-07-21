@@ -132,7 +132,7 @@ const RSVPForm = () => {
               <Textarea id='message' name='message' className='text-xl' />
             </div>
             <Button type='submit' className='w-full text-2xl'>
-              Enviar RSVP
+              Confirmar Asistencia
             </Button>
           </form>
           {successMessage && (
