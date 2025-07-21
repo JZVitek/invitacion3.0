@@ -3,7 +3,7 @@ export async function POST(request: Request) {
     const body = await request.json();
 
     const scriptUrl =
-      'https://script.google.com/macros/s/AKfycbzTpwrABqs4kJsbk7FKskt1DbvWTihbk7zPfqBQU-JhooCEoBov8oJ-Jg32agZSDNGA/exec';
+      'https://script.google.com/macros/s/AKfycbzXx_SVBL2F3YSvFfp99zSFAzp58HnHHHaHKlkZtgzg59E9K1O8oB15DHzaF0RiF6E/exec';
 
     const googleRes = await fetch(scriptUrl, {
       method: 'POST',

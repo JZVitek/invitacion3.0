@@ -176,12 +176,6 @@ const RSVPForm = () => {
             >
               {isSubmitting ? 'Enviando...' : 'Confirmar Asistencia'}
             </Button>
-            <p className='text-lg  text-gray-600 mt-4'>
-              Al confirmar tu asistencia, recibirás un correo electrónico con tu
-              confirmación, el cual será tu pase de entrada. Si no lo recibes,
-              por favor revisa que hayas escrito correctamente tu correo o
-              revisa tu carpeta de spam.
-            </p>
           </form>
           {successMessage && (
             <p className='text-green-500 mt-4'>{successMessage}</p>
