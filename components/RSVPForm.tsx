@@ -17,7 +17,6 @@ import { Textarea } from '@/components/ui/textarea';
 import RegistryModal from './RegistryModal';
 
 const RSVPForm = () => {
-  const [isSubmitting, setIsSubmitting] = useState(false);
   const [rsvpSubmitted, setRsvpSubmitted] = useState(false);
   const [codigoInvalido, setCodigoInvalido] = useState(false);
   const [errorMessage, setErrorMessage] = useState('');
@@ -26,10 +25,6 @@ const RSVPForm = () => {
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    setIsSubmitting(true);
-    setErrorMessage('');
-    setSuccessMessage('');
-    setCodigoInvalido(false);
 
     const target = e.target as typeof e.target & {
       name: { value: string };
@@ -37,67 +32,40 @@ const RSVPForm = () => {
       guests: { value: string };
       message: { value: string };
     };
+    const name = target.name.value;
+    const email = target.email.value;
+    const guests = target.guests.value;
+    const message = target.message.value;
 
-    const name = target.name.value.trim();
-    const email = target.email.value.trim();
-    const guests = parseInt(target.guests.value.trim(), 10);
-    const message = target.message.value.trim();
-
-    // 🧠 Validaciones simples
-    if (name.length < 2) {
-      setErrorMessage('El nombre debe tener al menos 2 caracteres.');
-      setIsSubmitting(false);
-      return;
-    }
-
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-      setErrorMessage('Ingresa un correo electrónico válido.');
-      setIsSubmitting(false);
-      return;
-    }
-
-    if (isNaN(guests) || guests < 1 || guests > 10) {
-      setErrorMessage('El número de invitados debe ser entre 1 y 10.');
-      setIsSubmitting(false);
-      return;
-    }
-
-    if (message.length > 500) {
-      setErrorMessage('El mensaje no debe exceder los 500 caracteres.');
-      setIsSubmitting(false);
-      return;
-    }
-
-    try {
-      const response = await fetch('/api/rsvp', {
+    const response = await fetch(
+      'https://script.google.com/macros/s/AKfycbywMCOvG35yNynnlY_QKd7ad33OPAiXjVhnLlVxwVnum5UbbLIgKiPVNayna-wXrwgZCg/exec',
+      {
+        mode: 'no-cors',
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({ name, email, guests, message }),
-      });
-
-      const data = await response.json();
-
-      if (data.status === 'success') {
-        setRsvpSubmitted(true);
-        setSuccessMessage(
-          'RSVP enviado correctamente. ¡Gracias por confirmar tu asistencia!'
-        );
-        setTimeout(() => setIsModalOpen(false), 3000);
-      } else {
-        setCodigoInvalido(true);
-        setErrorMessage(
-          data.message || 'Hubo un problema al enviar tu Confirmacion.'
-        );
       }
-    } catch (error) {
-      console.error('Error de red o inesperado:', error);
+    );
+
+    if (response.status === 0) {
+      setRsvpSubmitted(true);
+      setSuccessMessage(
+        'RSVP enviado correctamente. ¡Gracias por confirmar tu asistencia!'
+      );
+      setErrorMessage('');
+
+      // Cerrar el diálogo después de 3 segundos
+      setTimeout(() => {
+        setIsModalOpen(false);
+      }, 2000);
+    } else {
       setCodigoInvalido(true);
-      setErrorMessage('Error de red. Intenta de nuevo más tarde.');
-    } finally {
-      setIsSubmitting(false);
+      setErrorMessage(
+        'Hubo un problema al enviar tu RSVP. Por favor, inténtalo de nuevo.'
+      );
+      setSuccessMessage('');
     }
   };
 
@@ -109,7 +77,7 @@ const RSVPForm = () => {
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogTrigger asChild>
           <Button
-            className='text-xl'
+            className='text-2xl'
             size='lg'
             onClick={() => {
               setSuccessMessage('');
@@ -141,13 +109,7 @@ const RSVPForm = () => {
               <Label className='text-xl' htmlFor='email'>
                 Correo Electrónico
               </Label>
-              <Input
-                id='email'
-                name='email'
-                type='email'
-                className='text-xl'
-                required
-              />
+              <Input id='email' name='email' type='email' className='text-xl' required />
             </div>
             <div>
               <Label className='text-xl' htmlFor='guests'>
@@ -169,12 +131,8 @@ const RSVPForm = () => {
               </Label>
               <Textarea id='message' name='message' className='text-xl' />
             </div>
-            <Button
-              type='submit'
-              className='w-full text-2xl'
-              disabled={isSubmitting}
-            >
-              {isSubmitting ? 'Enviando...' : 'Confirmar Asistencia'}
+            <Button type='submit' className='w-full text-2xl'>
+              Enviar RSVP
             </Button>
           </form>
           {successMessage && (
@@ -188,7 +146,7 @@ const RSVPForm = () => {
         <h3 className='text-4xl sm:text-4xl font-semibold mb-2'>
           ¿Te gustaría hacenos un regalo?
         </h3>
-        <p className='mb-4 text-xl'>
+        <p className='mb-4 text-lg'>
           puedes hacerlo a través de una transferencia bancaria o en el dia de
           la boda
         </p>
