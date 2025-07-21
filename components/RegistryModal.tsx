@@ -31,7 +31,7 @@ export default function RegistryModal() {
   return (
     <Dialog>
       <DialogTrigger asChild>
-        <Button size='lg' className='text-2xl'>
+        <Button className='text-xl'>
           <Gift className='w-4 h-4 mr-2' />
           Click aquí para ver detalles
         </Button>

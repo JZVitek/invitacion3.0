@@ -109,7 +109,7 @@ const RSVPForm = () => {
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogTrigger asChild>
           <Button
-            className='text-2xl'
+            className='text-xl'
             size='lg'
             onClick={() => {
               setSuccessMessage('');
