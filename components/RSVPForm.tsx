@@ -22,34 +22,57 @@ const RSVPForm = () => {
   const [errorMessage, setErrorMessage] = useState('');
   const [successMessage, setSuccessMessage] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar la visibilidad del modal
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setIsSubmitting(true); // comienza animación
 
-    const target = e.target as typeof e.target & {
-      name: { value: string };
-      email: { value: string };
-      guests: { value: string };
-      message: { value: string };
-    };
-    const name = target.name.value;
-    const email = target.email.value;
-    const guests = target.guests.value;
-    const message = target.message.value;
+    try {
+      const target = e.target as typeof e.target & {
+        name: { value: string };
+        email: { value: string };
+        code: { value: string };
+        message: { value: string };
+      };
+      const name = target.name.value;
+      const email = target.email.value;
+      const code = target.code.value;
+      const message = target.message.value;
 
-    const response = await fetch(
-      'https://script.google.com/macros/s/AKfycbywMCOvG35yNynnlY_QKd7ad33OPAiXjVhnLlVxwVnum5UbbLIgKiPVNayna-wXrwgZCg/exec',
-      {
-        mode: 'no-cors',
+      const response = await fetch('/api/rsvp', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
-        body: JSON.stringify({ name, email, guests, message }),
-      }
-    );
+        body: JSON.stringify({ name, email, message, code }),
+      });
 
-    if (response.status === 0) {
+      const raw = await response.text(); // Siempre primero como texto
+
+      let result;
+      try {
+        result = JSON.parse(raw); // intenta convertir a JSON
+      } catch (e) {
+        console.error('Respuesta inválida del servidor:', raw);
+        setErrorMessage('Ocurrió un error inesperado. Intenta más tarde.');
+        return;
+      }
+
+      if (result.status === 'success') {
+        setSuccessMessage(
+          result.message || '¡Gracias por confirmar tu asistencia!'
+        );
+        setErrorMessage('');
+        setTimeout(() => setIsModalOpen(false), 2000);
+      } else {
+        setErrorMessage(
+          result.message || 'Hubo un error al procesar tu solicitud.'
+        );
+        setSuccessMessage('');
+      }
+
+      /*     if (response.status === 0) {
       setRsvpSubmitted(true);
       setSuccessMessage(
         'RSVP enviado correctamente. ¡Gracias por confirmar tu asistencia!'
@@ -66,6 +89,13 @@ const RSVPForm = () => {
         'Hubo un problema al enviar tu RSVP. Por favor, inténtalo de nuevo.'
       );
       setSuccessMessage('');
+    } */
+    } catch (error) {
+      console.error('Error al enviar RSVP:', error);
+      setErrorMessage('Hubo un problema al conectar con el servidor.');
+      setSuccessMessage('');
+    } finally {
+      setIsSubmitting(false); // termina animación
     }
   };
 
@@ -109,9 +139,15 @@ const RSVPForm = () => {
               <Label className='text-xl' htmlFor='email'>
                 Correo Electrónico
               </Label>
-              <Input id='email' name='email' type='email' className='text-xl' required />
+              <Input
+                id='email'
+                name='email'
+                type='email'
+                className='text-xl'
+                required
+              />
             </div>
-            <div>
+            {/*  <div>
               <Label className='text-xl' htmlFor='guests'>
                 Número de Invitados
               </Label>
@@ -124,6 +160,12 @@ const RSVPForm = () => {
                 className='text-xl'
                 required
               />
+            </div> */}
+            <div>
+              <Label className='text-xl' htmlFor='code'>
+                Código de reservación
+              </Label>
+              <Input id='code' name='code' className='text-xl' required />
             </div>
             <div>
               <Label className='text-xl' htmlFor='message'>
@@ -131,14 +173,47 @@ const RSVPForm = () => {
               </Label>
               <Textarea id='message' name='message' className='text-xl' />
             </div>
-            <Button type='submit' className='w-full text-2xl'>
-              Confirmar Asistencia
+            <Button
+              type='submit'
+              className='w-full text-2xl flex items-center justify-center'
+              disabled={isSubmitting}
+            >
+              {isSubmitting ? (
+                <>
+                  <svg
+                    className='animate-spin h-5 w-5 mr-2 text-white'
+                    xmlns='http://www.w3.org/2000/svg'
+                    fill='none'
+                    viewBox='0 0 24 24'
+                  >
+                    <circle
+                      className='opacity-25'
+                      cx='12'
+                      cy='12'
+                      r='10'
+                      stroke='currentColor'
+                      strokeWidth='4'
+                    ></circle>
+                    <path
+                      className='opacity-75'
+                      fill='currentColor'
+                      d='M4 12a8 8 0 018-8v4l3-3-3-3v4a8 8 0 00-8 8z'
+                    ></path>
+                  </svg>
+                  Enviando...
+                </>
+              ) : (
+                'Confirmar Asistencia'
+              )}
+              
             </Button>
           </form>
           {successMessage && (
-            <p className='text-green-500 mt-4'>{successMessage}</p>
+            <p className='text-green-700 text-xl mt-4'>{successMessage}</p>
           )}
-          {errorMessage && <p className='text-red-500 mt-4'>{errorMessage}</p>}
+          {errorMessage && (
+            <p className='text-red-700 text-xl mt-4'>{errorMessage}</p>
+          )}
         </DialogContent>
       </Dialog>
       {/* Registry Section */}
