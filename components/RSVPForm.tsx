@@ -1,5 +1,6 @@
 'use client';
 
+import axios from 'axios';
 import { useState, useEffect } from 'react';
 import {
   Dialog,
@@ -29,56 +30,41 @@ const RSVPForm = () => {
     setIsSubmitting(true); // comienza animación
 
     try {
-      const target = e.target as typeof e.target & {
-        name: { value: string };
-        email: { value: string };
-        code: { value: string };
-        message: { value: string };
-      };
-      const name = target.name.value;
-      const email = target.email.value;
-      const code = target.code.value;
-      const message = target.message.value;
+    const target = e.target as typeof e.target & {
+      name: { value: string };
+      email: { value: string };
+      code: { value: string };
+      message: { value: string };
+    };
+    const name = target.name.value;
+    const email = target.email.value;
+    const code = target.code.value;
+    const message = target.message.value;
 
-      const response = await fetch('/api/rsvp', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ name, email, message, code }),
-      });
+    const response = await axios.post('/api/rsvp', {
+      name,
+      email,
+      message,
+      code,
+    });
 
-      const raw = await response.text(); // Siempre primero como texto
+    const result = response.data;
 
-      let result;
-      try {
-        result = JSON.parse(raw); // intenta convertir a JSON
-      } catch (e) {
-        console.error('Respuesta inválida del servidor:', raw);
-        setErrorMessage('Ocurrió un error inesperado. Intenta más tarde.');
-        return;
-      }
-
-      if (result.status === 'success') {
-        setSuccessMessage(
-          result.message || '¡Gracias por confirmar tu asistencia!'
-        );
-        setErrorMessage('');
-        setTimeout(() => setIsModalOpen(false), 2000);
-      } else {
-        setErrorMessage(
-          result.message || 'Hubo un error al procesar tu solicitud.'
-        );
-        setSuccessMessage('');
-      }
-      
-    } catch (error) {
-      console.error('Error al enviar RSVP:', error);
-      setErrorMessage('Hubo un problema al conectar con el servidor.');
+    if (result.status === 'success') {
+      setSuccessMessage(result.message || '¡Gracias por confirmar tu asistencia!');
+      setErrorMessage('');
+      setTimeout(() => setIsModalOpen(false), 2000);
+    } else {
+      setErrorMessage(result.message || 'Hubo un error al procesar tu solicitud.');
       setSuccessMessage('');
-    } finally {
-      setIsSubmitting(false); // termina animación
     }
+  } catch (error: any) {
+    console.error('Error al enviar RSVP:', error);
+    setErrorMessage('Hubo un problema al conectar con el servidor.');
+    setSuccessMessage('');
+  } finally {
+    setIsSubmitting(false);
+  }
   };
 
   return (
