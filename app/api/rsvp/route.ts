@@ -14,6 +14,7 @@ export async function POST(req: Request) {
   );
 
   const contentType = response.headers.get('content-type');
+  console.log(response)
 
   if (!response.ok) {
     // Error HTTP
