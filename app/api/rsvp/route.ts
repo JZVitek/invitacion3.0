@@ -1,44 +1,38 @@
-// /app/api/rsvp/route.ts
+import axios from 'axios';
+export const runtime = 'nodejs';
+
 export async function POST(req: Request) {
   const body = await req.json();
 
-  const response = await fetch(
-    'https://script.google.com/macros/s/AKfycbzeSC1UdIsiGsk8VuWcHANOC--9LIcraBHps8hLD7gbNkT8Z6VZe4m4jUMnptSJ8j2x/exec',
-    {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(body),
-    }
-  );
+  try {
+    const response = await axios.post(
+      'https://script.google.com/macros/s/AKfycbzeSC1UdIsiGsk8VuWcHANOC--9LIcraBHps8hLD7gbNkT8Z6VZe4m4jUMnptSJ8j2x/exec',
+      body,
+      {
+        headers: {
+          'Content-Type': 'application/json',
+        },
+      }
+    );
 
-  const contentType = response.headers.get('content-type');
-  console.log(response)
-
-  if (!response.ok) {
-    // Error HTTP
-    const text = await response.text();
-    return new Response(JSON.stringify({ status: 'error', message: 'Error en el servidor', detail: text }), {
-      status: response.status,
-      headers: { 'Content-Type': 'application/json' },
-    });
-  }
-
-  if (contentType && contentType.includes('application/json')) {
-    // Si es JSON, lo devolvemos tal cual
-    const json = await response.json();
-    return new Response(JSON.stringify(json), {
+    // Si la respuesta es JSON, la devolvemos tal cual
+    return new Response(JSON.stringify(response.data), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
-  } else {
-    // Probablemente es un HTML de error de Apps Script
-    const text = await response.text();
+  } catch (error: any) {
+    // Si axios lanza un error, puede tener response o solo mensaje
+    const status = error.response?.status || 500;
+    const detail = error.response?.data || error.message || 'Error desconocido';
+
     return new Response(
-      JSON.stringify({ status: 'error', message: 'Respuesta no válida del servidor', detail: text }),
+      JSON.stringify({
+        status: 'error',
+        message: 'Error en el servidor',
+        detail,
+      }),
       {
-        status: 500,
+        status,
         headers: { 'Content-Type': 'application/json' },
       }
     );
