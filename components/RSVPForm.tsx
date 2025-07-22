@@ -49,6 +49,7 @@ const RSVPForm = () => {
     });
 
     const result = response.data;
+    console.log('Respuesta del servidor:', result);
 
     if (result.status === 'success') {
       setSuccessMessage(result.message || '¡Gracias por confirmar tu asistencia!');
