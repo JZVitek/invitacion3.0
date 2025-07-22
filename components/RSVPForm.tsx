@@ -71,25 +71,7 @@ const RSVPForm = () => {
         );
         setSuccessMessage('');
       }
-
-      /*     if (response.status === 0) {
-      setRsvpSubmitted(true);
-      setSuccessMessage(
-        'RSVP enviado correctamente. ¡Gracias por confirmar tu asistencia!'
-      );
-      setErrorMessage('');
-
-      // Cerrar el diálogo después de 3 segundos
-      setTimeout(() => {
-        setIsModalOpen(false);
-      }, 2000);
-    } else {
-      setCodigoInvalido(true);
-      setErrorMessage(
-        'Hubo un problema al enviar tu RSVP. Por favor, inténtalo de nuevo.'
-      );
-      setSuccessMessage('');
-    } */
+      
     } catch (error) {
       console.error('Error al enviar RSVP:', error);
       setErrorMessage('Hubo un problema al conectar con el servidor.');
@@ -205,7 +187,7 @@ const RSVPForm = () => {
               ) : (
                 'Confirmar Asistencia'
               )}
-              
+
             </Button>
           </form>
           {successMessage && (
