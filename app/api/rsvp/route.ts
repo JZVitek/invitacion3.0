@@ -5,7 +5,7 @@ export async function POST(req: Request) {
 
   try {
     const response = await axios.post(
-      'https://script.google.com/macros/s/AKfycbyj6H9oylMoMl8RTRYM3flk3DfoL1fKaKbceNfRnEbpbstPILIFWMiNnOLGY53pKve1/exec',
+      'https://script.google.com/macros/s/AKfycbzV0H1Reviav8M3n4w1I04y1v--bsIi7INK0kufmWfgqhLTnhFSfhSA_9M-uoXDcN0d/exec',
       body,
       {
         headers: {
