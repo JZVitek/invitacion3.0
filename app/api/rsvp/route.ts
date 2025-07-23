@@ -11,16 +11,17 @@ export async function POST(req: Request) {
         headers: {
           'Content-Type': 'application/json',
         },
+        responseType: 'text', // 👈 IMPORTANTE: forzar texto plano
       }
     );
 
-    // Si la respuesta es JSON, la devolvemos tal cual
-    return new Response(JSON.stringify(response.data), {
+    const parsed = JSON.parse(response.data); // 👈 Parseamos a mano
+
+    return new Response(JSON.stringify(parsed), {
       status: 200,
       headers: { 'Content-Type': 'application/json' },
     });
   } catch (error: any) {
-    // Si axios lanza un error, puede tener response o solo mensaje
     const status = error.response?.status || 500;
     const detail = error.response?.data || error.message || 'Error desconocido';
 
