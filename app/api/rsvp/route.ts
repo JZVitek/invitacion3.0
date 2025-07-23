@@ -1,12 +1,13 @@
+"use server";
+
 import axios from 'axios';
-export const runtime = 'nodejs';
 
 export async function POST(req: Request) {
   const body = await req.json();
 
   try {
     const response = await axios.post(
-      'https://script.google.com/macros/s/AKfycbzeSC1UdIsiGsk8VuWcHANOC--9LIcraBHps8hLD7gbNkT8Z6VZe4m4jUMnptSJ8j2x/exec',
+      'https://script.google.com/macros/s/AKfycbyj6H9oylMoMl8RTRYM3flk3DfoL1fKaKbceNfRnEbpbstPILIFWMiNnOLGY53pKve1/exec',
       body,
       {
         headers: {

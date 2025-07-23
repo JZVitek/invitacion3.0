@@ -47,6 +47,7 @@ const RSVPForm = () => {
       message,
       code,
     });
+    console.log(response);
 
     const result = response.data;
     console.log('Respuesta del servidor:', result);
