@@ -56,6 +56,7 @@ export async function POST(req: Request) {
       },
       body: JSON.stringify(data),
     });
+    console.log('Response from Apps Script:', response);
 
     const result = await response.json();
 
