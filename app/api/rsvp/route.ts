@@ -47,7 +47,7 @@ export async function POST(req: Request) {
   try {
     const data = await req.json();
 
-    const scriptUrl = 'https://script.google.com/macros/s/AKfycbx1zznRNxiJVpgnJtXx4Zqc2vjU6RYT6I3dr9TX2v7ahvya1ivv_eXQrqY3uwt3F1U_/exec'; 
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbx_Dc8MPDdlHpTEXXfp_tB0zr2EkkdPPl89AmEUjOKAgtUa8OJXcPO-RLqe7uTy3NMnYg/exec'; 
 
     const response = await fetch(scriptUrl, {
       method: 'POST',
