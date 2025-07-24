@@ -25,50 +25,6 @@ const RSVPForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar la visibilidad del modal
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  /*   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setIsSubmitting(true); // comienza animación
-
-    try {
-    const target = e.target as typeof e.target & {
-      name: { value: string };
-      email: { value: string };
-      code: { value: string };
-      message: { value: string };
-    };
-    const name = target.name.value;
-    const email = target.email.value;
-    const code = target.code.value;
-    const message = target.message.value;
-
-    const response = await axios.post('/api/rsvp', {
-      name,
-      email,
-      message,
-      code,
-    });
-    console.log(response);
-
-    const result = response.data;
-    console.log('Respuesta del servidor:', result);
-
-    if (result.status === 'success') {
-      setSuccessMessage(result.message || '¡Gracias por confirmar tu asistencia!');
-      setErrorMessage('');
-      setTimeout(() => setIsModalOpen(false), 2000);
-    } else {
-      setErrorMessage(result.message || 'Hubo un error al procesar tu solicitud.');
-      setSuccessMessage('');
-    }
-  } catch (error: any) {
-    console.error('Error al enviar RSVP:', error);
-    setErrorMessage('Hubo un problema al conectar con el servidor.');
-    setSuccessMessage('');
-  } finally {
-    setIsSubmitting(false);
-  }
-  }; */
-
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true);
@@ -92,12 +48,17 @@ const RSVPForm = () => {
 
     try {
       const response = await axios.post('/api/rsvp', data);
-      console.log('Respuesta del servidor:', response.data);
+
       if (response.data.status === 'success') {
-        setSuccessMessage('¡Tu asistencia ha sido confirmada con éxito!');
+        setSuccessMessage(
+          '¡Tu asistencia ha sido confirmada con éxito, recibirás un correo de confirmación con tu pase de entrada!'
+        );
         setRsvpSubmitted(true);
       } else {
-        setErrorMessage(response.data.message || 'Ocurrió un error');
+        setErrorMessage(
+          response.data.message ||
+            'Ocurrió un error, vuelve a intentarlo más tarde.'
+        );
         if (response.data.message?.toLowerCase().includes('código')) {
           setCodigoInvalido(true);
         }
@@ -158,20 +119,6 @@ const RSVPForm = () => {
                 required
               />
             </div>
-            {/*  <div>
-              <Label className='text-xl' htmlFor='guests'>
-                Número de Invitados
-              </Label>
-              <Input
-                id='guests'
-                name='guests'
-                type='number'
-                min='1'
-                max='10'
-                className='text-xl'
-                required
-              />
-            </div> */}
             <div>
               <Label className='text-xl' htmlFor='code'>
                 Código de reservación
