@@ -5,17 +5,17 @@ export async function POST(req: Request) {
 
   try {
     const response = await axios.post(
-      'https://script.google.com/macros/s/AKfycbxINknufflorLtGKf_1iCxxD72Qm9iL8d68JFqKcI70gzqMw4RnMHxSXthHujqlOBfj/exec',
+      'https://script.google.com/macros/s/AKfycbx1zznRNxiJVpgnJtXx4Zqc2vjU6RYT6I3dr9TX2v7ahvya1ivv_eXQrqY3uwt3F1U_/exec',
       body,
       {
         headers: {
           'Content-Type': 'application/json',
         },
-        responseType: 'text', // 👈 IMPORTANTE: forzar texto plano
+        responseType: 'text', 
       }
     );
 
-    const parsed = JSON.parse(response.data); // 👈 Parseamos a mano
+    const parsed = JSON.parse(response.data);
 
     return new Response(JSON.stringify(parsed), {
       status: 200,
