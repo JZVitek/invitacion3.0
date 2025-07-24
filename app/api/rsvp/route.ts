@@ -1,4 +1,4 @@
-import axios from 'axios';
+/* import axios from 'axios';
 
 export async function POST(req: Request) {
   const body = await req.json();
@@ -36,5 +36,32 @@ export async function POST(req: Request) {
         headers: { 'Content-Type': 'application/json' },
       }
     );
+  }
+}
+ */
+
+// app/api/rsvp/route.ts
+import { NextResponse } from 'next/server';
+
+export async function POST(req: Request) {
+  try {
+    const data = await req.json();
+
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbx1zznRNxiJVpgnJtXx4Zqc2vjU6RYT6I3dr9TX2v7ahvya1ivv_eXQrqY3uwt3F1U_/exec'; 
+
+    const response = await fetch(scriptUrl, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    });
+
+    const result = await response.json();
+
+    return NextResponse.json(result, { status: 200 });
+  } catch (error) {
+    console.error('Error al llamar a Apps Script:', error);
+    return NextResponse.json({ status: 'error', message: 'Error interno' }, { status: 500 });
   }
 }

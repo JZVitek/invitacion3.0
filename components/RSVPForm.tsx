@@ -25,7 +25,7 @@ const RSVPForm = () => {
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar la visibilidad del modal
   const [isSubmitting, setIsSubmitting] = useState(false);
 
-  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+  /*   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
     setIsSubmitting(true); // comienza animación
 
@@ -67,6 +67,47 @@ const RSVPForm = () => {
   } finally {
     setIsSubmitting(false);
   }
+  }; */
+
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    setSuccessMessage('');
+    setErrorMessage('');
+    setCodigoInvalido(false);
+
+    const target = e.target as typeof e.target & {
+      name: { value: string };
+      email: { value: string };
+      code: { value: string };
+      message: { value: string };
+    };
+
+    const data = {
+      name: target.name.value.trim(),
+      email: target.email.value.trim(),
+      code: target.code.value.trim(),
+      message: target.message.value.trim(),
+    };
+
+    try {
+      const response = await axios.post('/api/rsvp', data);
+
+      if (response.data.status === 'success') {
+        setSuccessMessage('¡Tu asistencia ha sido confirmada con éxito!');
+        setRsvpSubmitted(true);
+      } else {
+        setErrorMessage(response.data.message || 'Ocurrió un error');
+        if (response.data.message?.toLowerCase().includes('código')) {
+          setCodigoInvalido(true);
+        }
+      }
+    } catch (error: any) {
+      console.error('Error al enviar RSVP:', error);
+      setErrorMessage('Hubo un problema al enviar tu confirmación.');
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -175,7 +216,6 @@ const RSVPForm = () => {
               ) : (
                 'Confirmar Asistencia'
               )}
-
             </Button>
           </form>
           {successMessage && (
