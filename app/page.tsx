@@ -132,7 +132,7 @@ export default function Home() {
                   Información adicional
                 </h2>
                 <div className='flex flex-col items-center mb-6'>
-                  <span className='text-3xl mb-2'>Dress Code: Formal</span>
+                  <span className='text-3xl mb-2'>Dress Code: Negro Formal, ¡sin excepciones!</span>
                   <Image
                     src='/images/dress-code.png'
                     alt='Dress Code'

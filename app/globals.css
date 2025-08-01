@@ -8,6 +8,7 @@
   --background-end-rgb: 255, 255, 255;
 }
 
+
 @media (prefers-color-scheme: dark) {
   :root {
     --foreground-rgb: 255, 255, 255;
@@ -74,11 +75,11 @@
 
 @layer base {
   * {
-    @apply border-border;
+    border-color: hsl(var(--border));
     font-family: "Dancing Script", cursive;
   }
   body {
-    @apply bg-background ;
+    background-color: hsl(var(--background));
     
   }
 }
@@ -89,6 +90,14 @@
   font-weight: 400rem;
   font-style: normal;
 }
+
+.cinzel-text-titles {
+  font-family: "Cinzel", serif;
+  font-optical-sizing: auto;
+  font-weight: 400rem;
+  font-style: normal;
+}
+
 
 .texto {
   font-family: "Dancing Script", cursive;

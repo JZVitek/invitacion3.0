@@ -1,6 +1,7 @@
 'use client';
 
 import CountdownTimer from './CountdownTimer';
+import Image from 'next/image';
 
 export default function HeroSection() {
   const weddingDate = new Date('2025-11-09T21:00:00');
@@ -8,16 +9,18 @@ export default function HeroSection() {
   return (
     <section className='relative min-h-[100dvh] flex items-center justify-center'>
       <div className='absolute inset-0'>
-        <img
+        <Image
           src='https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3'
           alt='Wedding background'
-          className='w-full h-full object-cover'
+          fill
+          className='object-cover'
+          priority
         />
         <div className='absolute inset-0 bg-black/40' />
       </div>
       <div className='relative text-center text-white space-y-8 sm:space-y-12 max-w-3xl mx-auto px-4'>
         <div className='space-y-4 sm:space-y-6'>
-          <h3 className='text-lg sm:text-xl font-light tracking-[0.2em] uppercase dancing-script-text'>
+          <h3 className='text-xl sm:text-xl font-light tracking-[0.2em] uppercase cinzel-text-titles'>
             Save the Date
           </h3>
           <div className='w-24 sm:w-32 h-[1px] bg-white/50 mx-auto' />
@@ -33,7 +36,7 @@ export default function HeroSection() {
             </span>
           </h1>
           <div className='w-24 sm:w-32 h-[1px] bg-white/50 mx-auto' />
-          <p className='text-lg sm:text-xl font-light tracking-wider dancing-script-text'>
+          <p className='text-xl sm:text-xl font-light tracking-wider cinzel-text-titles uppercase'>
             9 de Noviembre, 2025
           </p>
         </div>
