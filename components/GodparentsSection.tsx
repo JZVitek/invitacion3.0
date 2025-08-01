@@ -13,7 +13,7 @@ interface Godparent {
 const godparents: Godparent[] = [
   {
     role: 'Padrinos de Velación',
-    names: ['Sr. y Sra. Zamora'],
+    names: ['Olga Zamora y Apolonio Mora'],
     image:
       'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=800&auto=format&fit=crop&q=80',
   },

@@ -3,7 +3,7 @@
 import {
   Calendar,
   Clock,
-  Gift,
+  User,
   Hash,
   Mail,
   Phone,
@@ -20,6 +20,7 @@ import ParticlesBackground from '@/components/particles-background';
 import PhotoCarousel from '@/components/PhotoCarousel';
 import GodparentsSection from '@/components/GodparentsSection';
 import Music from '@/components/Music';
+import Image from 'next/image';
 
 export default function Home() {
   return (
@@ -66,6 +67,17 @@ export default function Home() {
                   </p>
                 </div>
               </div>
+
+              <div className='flex justify-center mt-4'>
+                <a
+                  href='/boda-karime-jesus.ics'
+                  download='boda-karime-jesus.ics'
+                  className='bg-black text-white rounded-full px-4 py-2 text-xl font-semibold shadow hover:bg-gray-800 transition flex items-center gap-2 text-center'
+                >
+                  <Calendar className='w-5 h-5' />
+                  Agregar a mi calendario
+                </a>
+              </div>
             </Card>
 
             <LocationSection />
@@ -81,6 +93,11 @@ export default function Home() {
               </h2>
               <div className='grid sm:grid-cols-2 gap-6 sm:gap-8'>
                 <div>
+                  <div className='flex justify-center mb-2'>
+                    <span className='inline-block bg-neutral-100 rounded-full p-2'>
+                      <User className='w-8 h-8 text-black' />
+                    </span>
+                  </div>
                   <h3 className='text-2xl sm:text-3xl font-semibold mb-2'>
                     Padres de la novia
                   </h3>
@@ -89,6 +106,11 @@ export default function Home() {
                   </p>
                 </div>
                 <div>
+                  <div className='flex justify-center mb-2'>
+                    <span className='inline-block bg-neutral-100 rounded-full p-2'>
+                      <User className='w-8 h-8 text-black' />
+                    </span>
+                  </div>
                   <h3 className='text-2xl sm:text-3xl font-semibold mb-2'>
                     Padres del novio
                   </h3>
@@ -106,17 +128,22 @@ export default function Home() {
             {/* Additional Info */}
             <Card className='p-6 sm:p-8 space-y-6'>
               <div className='text-center'>
-                <h2 className='text-4xl sm:text-4xl font-serif mb-4 texto'>
+                <h2 className='text-5xl sm:text-5xl font-serif mb-4 texto'>
                   Información adicional
                 </h2>
-                <p className='mb-6 text-2xl'>Dress Code: Formal</p>
-                <div className='flex justify-center gap-4 mb-6'>
-                  <div className='w-8 h-8 rounded-full bg-[#000000]' />
-                  <div className='w-8 h-8 rounded-full bg-[#000000]' />
-                  <div className='w-8 h-8 rounded-full bg-[#000000]' />
+                <div className='flex flex-col items-center mb-6'>
+                  <span className='text-3xl mb-2'>Dress Code: Formal</span>
+                  <Image
+                    src='/images/dress-code.png'
+                    alt='Dress Code'
+                    width={138}
+                    height={138}
+                    className='rounded-lg'
+                  />
                 </div>
               </div>
-
+            </Card>
+            <Card className='p-6 sm:p-8 space-y-6'>
               <PhotoCarousel />
 
               <div className='flex flex-col items-center justify-center text-center gap-4'>

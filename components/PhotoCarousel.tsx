@@ -44,9 +44,11 @@ export default function PhotoCarousel() {
             <CarouselItem key={index} className='md:basis-1/2 lg:basis-1/3'>
               <div className='p-1'>
                 <Card className='overflow-hidden aspect-[3/4]'>
-                  <img
+                  <Image
                     src={photo.url}
                     alt={photo.alt}
+                    width={400}
+                    height={533}
                     className='w-full h-full object-cover filter grayscale hover:grayscale-0 transition-all duration-300'
                   />
                 </Card>
