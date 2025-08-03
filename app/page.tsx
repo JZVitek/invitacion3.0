@@ -7,7 +7,6 @@ import {
   Hash,
   Mail,
   Phone,
-  MapPin,
   Church,
   BellElectric,
 } from 'lucide-react';
