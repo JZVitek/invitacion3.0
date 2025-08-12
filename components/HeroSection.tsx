@@ -10,7 +10,7 @@ export default function HeroSection() {
     <section className='relative min-h-[100dvh] flex items-center justify-center'>
       <div className='absolute inset-0'>
         <Image
-          src='https://images.unsplash.com/photo-1519225421980-715cb0215aed?ixlib=rb-4.0.3'
+          src='https://img.smartslides.com/gal/aws/4k/1.5x/109968/eb92919a569ad7751c38f234f0bf81/51f321a6f263deaecb74.jpg?width=1440&height=960'
           alt='Wedding background'
           fill
           className='object-cover'

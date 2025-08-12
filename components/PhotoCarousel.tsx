@@ -12,20 +12,40 @@ import Image from 'next/image';
 
 const photos = [
   {
-    url: 'https://images.unsplash.com/photo-1606800052052-a08af7148866?w=800&auto=format&fit=crop&q=80',
+    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/a99a46959d854e0b1cdbd697f5eccc/58eb3b25d89973f97ba0.jpg?width=1440&height=960',
     alt: 'Wedding couple black and white',
   },
   {
-    url: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?w=800&auto=format&fit=crop&q=80',
+    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/eb92919a569ad7751c38f234f0bf81/51f321a6f263deaecb74.jpg',
     alt: 'Elegant wedding moment',
   },
   {
-    url: 'https://images.unsplash.com/photo-1591604466107-ec97de577aff?w=800&auto=format&fit=crop&q=80',
+    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/feb935f3277c7227a4f6ba6e43626f/ce8d93665c65872d5215.jpg',
     alt: 'Wedding celebration',
   },
   {
-    url: 'https://images.unsplash.com/photo-1609151162377-794faf68b02f?w=800&auto=format&fit=crop&q=80',
-    alt: 'Romantic wedding moment',
+    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/9bc8d7ddad1e2041079df3b1a55265/7307d427639c126d425f.jpg',
+    alt: 'Wedding celebration',
+  },
+  {
+    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/42d00c05cc9222f575334ebe55fdb6/49be32b2e896b2af8978.jpg',
+    alt: 'Wedding couple portrait',
+  },
+  {
+    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/7f1dbccb773eec91af97b91c5414b2/8df0ee2d1a14ac20c976.jpg',
+    alt: 'Wedding rings close-up',
+  },
+  {
+    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/2e182913d607ecc96b23a9e37ab003/15fbf21b779deb3df806.jpg',
+    alt: 'Wedding couple walking',
+  },
+  {
+    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/0e291b9cdf736c368baa765a33c10a/ac5cc81d8d2b8f64cacd.jpg',
+    alt: 'Wedding couple with bouquet',
+  },
+  {
+    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/1de86a790a734d139eefac3f5adc07/9f981075f7beb1039d2b.jpg',
+    alt: 'Wedding couple close-up',
   },
 ];
 

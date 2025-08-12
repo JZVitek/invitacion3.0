@@ -159,7 +159,7 @@ export default function Home() {
             </Card>
 
             {/* Additional Info */}
-            <Card className='p-6 sm:p-8 space-y-6'>
+  {/*           <Card className='p-6 sm:p-8 space-y-6'>
               <div className='text-center'>
                 <h2 className='text-4xl sm:text-4xl font-serif mb-4 texto'>
                   Nuestra Boda
@@ -179,7 +179,7 @@ export default function Home() {
                   </p>
                 </div>
               </div>
-            </Card>
+            </Card> */}
 
             {/* Contact */}
             <Card className='p-6 sm:p-8 text-center'>
