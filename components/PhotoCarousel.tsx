@@ -12,41 +12,77 @@ import Image from 'next/image';
 
 const photos = [
   {
-    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/a99a46959d854e0b1cdbd697f5eccc/58eb3b25d89973f97ba0.jpg?width=1440&height=960',
-    alt: 'Wedding couple black and white',
+    url: '/images/DSC_2352.jpg',
+    alt: 'Descripción de la imagen 1',
   },
   {
-    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/eb92919a569ad7751c38f234f0bf81/51f321a6f263deaecb74.jpg',
-    alt: 'Elegant wedding moment',
+    url: '/images/DSC_2374.jpg',
+    alt: 'Descripción de la imagen 2',
   },
   {
-    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/feb935f3277c7227a4f6ba6e43626f/ce8d93665c65872d5215.jpg',
-    alt: 'Wedding celebration',
+    url: '/images/DSC_2390.jpg',
+    alt: 'Descripción de la imagen 3',
   },
   {
-    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/9bc8d7ddad1e2041079df3b1a55265/7307d427639c126d425f.jpg',
-    alt: 'Wedding celebration',
+    url: '/images/DSC_2421.jpg',
+    alt: 'Descripción de la imagen 4',
   },
   {
-    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/42d00c05cc9222f575334ebe55fdb6/49be32b2e896b2af8978.jpg',
-    alt: 'Wedding couple portrait',
+    url: '/images/DSC_2427.jpg',
+    alt: 'Descripción de la imagen 5',
   },
   {
-    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/7f1dbccb773eec91af97b91c5414b2/8df0ee2d1a14ac20c976.jpg',
-    alt: 'Wedding rings close-up',
+    url: '/images/DSC_2445.jpg',
+    alt: 'Descripción de la imagen 6',
   },
   {
-    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/2e182913d607ecc96b23a9e37ab003/15fbf21b779deb3df806.jpg',
-    alt: 'Wedding couple walking',
+    url: '/images/DSC_2451.jpg',
+    alt: 'Descripción de la imagen 7',
   },
   {
-    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/0e291b9cdf736c368baa765a33c10a/ac5cc81d8d2b8f64cacd.jpg',
-    alt: 'Wedding couple with bouquet',
+    url: '/images/DSC_2462.jpg',
+    alt: 'Descripción de la imagen 8',
   },
   {
-    url: 'https://img.smartslides.com/gal/aws/4k/1.5x/109968/1de86a790a734d139eefac3f5adc07/9f981075f7beb1039d2b.jpg',
-    alt: 'Wedding couple close-up',
+    url: '/images/DSC_2514.jpg',
+    alt: 'Descripción de la imagen 9',
   },
+  {
+    url: '/images/DSC_2542.jpg',
+    alt: 'Descripción de la imagen 10',
+  },
+  {
+    url: '/images/DSC_2553.jpg',
+    alt: 'Descripción de la imagen 11',
+  },
+  {
+    url: '/images/DSC_2613.jpg',
+    alt: 'Descripción de la imagen 12',
+  },
+  {
+    url: '/images/DSC_2623.jpg',
+    alt: 'Descripción de la imagen 13',
+  },
+  {
+    url: '/images/DSC_2658.jpg',
+    alt: 'Descripción de la imagen 14',
+  },
+  {
+    url: '/images/DSC_2766.jpg',
+    alt: 'Descripción de la imagen 16',
+  },
+  {
+    url: '/images/DSC_2853.jpg',
+    alt: 'Descripción de la imagen 17',
+  },
+  {
+    url: '/images/DSC_2892.jpg',
+    alt: 'Descripción de la imagen 18',
+  },
+  {
+    url: '/images/DSC_3107.jpg',
+    alt: 'Descripción de la imagen 19',
+  }
 ];
 
 export default function PhotoCarousel() {

@@ -38,7 +38,7 @@ export default function CountdownTimer({ targetDate }: CountdownTimerProps) {
         <div key={unit} className='text-center'>
           <div className='relative'>
             <div className='w-16 h-16 sm:w-20 sm:h-20 rounded-full border-2 border-white/30 flex items-center justify-center backdrop-blur-sm bg-white/10'>
-              <div className='text-3xl sm:text-4xl font-light'>
+              <div className='text-3xl sm:text-4xl font-light'> 
                 {value.toString().padStart(2, '0')}
               </div>
             </div>

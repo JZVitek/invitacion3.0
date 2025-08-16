@@ -175,10 +175,10 @@ const RSVPForm = () => {
       </Dialog>
       {/* Registry Section */}
       <div className='mt-8'>
-        <h3 className='text-4xl sm:text-4xl font-semibold mb-2'>
+        <h3 className='text-xl sm:text-2xl cinzel-text-titles mb-2'>
           ¿Te gustaría hacenos un regalo?
         </h3>
-        <p className='mb-4 text-lg'>
+        <p className='mb-4 text-lg cinzel-text-titles'>
           puedes hacerlo a través de una transferencia bancaria o en el dia de
           la boda
         </p>

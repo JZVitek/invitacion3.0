@@ -44,11 +44,11 @@ export default function Home() {
                   <h3 className='text-4xl sm:text-4xl font-semibold mb-2'>
                     Ceremonia
                   </h3>
-                  <p className='flex items-center justify-center gap-2'>
+                  <p className='flex items-center justify-center gap-2 cinzel-text-titles'>
                     <Calendar className='w-4 h-4 text-2xl' />9 de Noviembre,
                     2025
                   </p>
-                  <p className='flex items-center justify-center gap-2'>
+                  <p className='flex items-center justify-center gap-2 cinzel-text-titles'>
                     <Clock className='w-4 h-4' />
                     5:00 PM
                   </p>
@@ -60,7 +60,7 @@ export default function Home() {
                   <h3 className='text-4xl sm:text-4xl font-semibold mb-2'>
                     Recepción
                   </h3>
-                  <p className='flex items-center justify-center gap-2'>
+                  <p className='flex items-center justify-center gap-2 cinzel-text-titles'>
                     <Clock className='w-4 h-4' />
                     8:00 PM
                   </p>
@@ -97,7 +97,7 @@ export default function Home() {
                       <User className='w-8 h-8 text-black' />
                     </span>
                   </div>
-                  <h3 className='text-2xl sm:text-3xl font-semibold mb-2'>
+                  <h3 className='text-xl sm:text-2xl cinzel-text-titles mb-2'>
                     Padres de la novia
                   </h3>
                   <p className='text-xl'>
@@ -110,7 +110,7 @@ export default function Home() {
                       <User className='w-8 h-8 text-black' />
                     </span>
                   </div>
-                  <h3 className='text-2xl sm:text-3xl font-semibold mb-2'>
+                  <h3 className='text-xl sm:text-2xl cinzel-text-titles mb-2'>
                     Padres del novio
                   </h3>
                   <p className='text-xl'>
@@ -131,7 +131,9 @@ export default function Home() {
                   Información adicional
                 </h2>
                 <div className='flex flex-col items-center mb-6'>
-                  <span className='text-3xl mb-2'>Dress Code: Negro Formal, ¡sin excepciones!</span>
+                  <span className='text-2xl mb-2 cinzel-text-titles'>
+                    Dress Code: Negro Formal, ¡sin excepciones!
+                  </span>
                   <Image
                     src='/images/dress-code.png'
                     alt='Dress Code'
@@ -143,23 +145,27 @@ export default function Home() {
               </div>
             </Card>
             <Card className='p-6 sm:p-8 space-y-6'>
-              <PhotoCarousel />
-
-              <div className='flex flex-col items-center justify-center text-center gap-4'>
-                <div className='flex flex-col items-center justify-center gap-4'>
-                  <h3 className='text-3xl sm:text-4xl font-semibold mb-2'>
-                    Compartenos tus fotos con el hashtag
-                  </h3>
-                  <p className='flex items-center justify-center gap-2 text-xl'>
-                    <Hash className='w-4 h-4 text-2xl' />
-                    KarimeAndJesus2024
-                  </p>
+              <div className='text-center'>
+                <h2 className='text-5xl sm:text-5xl font-serif mb-4 texto'>
+                  Galeria
+                </h2>
+                <PhotoCarousel />
+                <div className='flex flex-col items-center justify-center text-center gap-4'>
+                  <div className='flex flex-col items-center justify-center gap-4'>
+                    <h3 className='text-3xl sm:text-4xl font-semibold mb-2'>
+                      Compartenos tus fotos con el hashtag
+                    </h3>
+                    <p className='flex items-center justify-center gap-2 text-xl cinzel-text-titles'>
+                      <Hash className='w-4 h-4 text-2xl cinzel-text-titles' />
+                      KarimeyJesus2025
+                    </p>
+                  </div>
                 </div>
               </div>
             </Card>
 
             {/* Additional Info */}
-  {/*           <Card className='p-6 sm:p-8 space-y-6'>
+            {/*           <Card className='p-6 sm:p-8 space-y-6'>
               <div className='text-center'>
                 <h2 className='text-4xl sm:text-4xl font-serif mb-4 texto'>
                   Nuestra Boda

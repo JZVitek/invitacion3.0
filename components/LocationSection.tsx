@@ -63,7 +63,7 @@ export default function LocationSection() {
               />
               <div className='absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-0 hover:opacity-100 transition-opacity duration-300' />
             </div>
-            <p className='text-gray-600 text-lg'>{location.address}</p>
+            <p className='text-gray-600 text-lg cinzel-text-titles'>{location.address}</p>
             <Button
               variant='outline'
               onClick={() => openMaps(location.mapsUrl)}
