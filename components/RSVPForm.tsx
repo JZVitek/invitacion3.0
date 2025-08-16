@@ -40,9 +40,9 @@ const RSVPForm = () => {
     };
 
     const data = {
-      name: target.name.value.trim(),
+      name: target.name.value.trim().toUpperCase(),
       email: target.email.value.trim(),
-      code: target.code.value.trim(),
+      code: target.code.value.trim().toUpperCase(),
       message: target.message.value.trim(),
     };
 
@@ -95,7 +95,7 @@ const RSVPForm = () => {
             <DialogTitle className='text-4xl'>
               RSVP para nuestra boda
             </DialogTitle>
-            <DialogDescription className='text-2xl'>
+            <DialogDescription className='text-lg cinzel-text-titles'>
               Por favor, completa el siguiente formulario para confirmar tu
               asistencia.
             </DialogDescription>
@@ -105,7 +105,7 @@ const RSVPForm = () => {
               <Label className='text-xl' htmlFor='name'>
                 Nombre
               </Label>
-              <Input id='name' name='name' className='text-xl' required />
+              <Input id='name' name='name' className='text-lg cinzel-text-titles' required />
             </div>
             <div>
               <Label className='text-xl' htmlFor='email'>
@@ -115,7 +115,7 @@ const RSVPForm = () => {
                 id='email'
                 name='email'
                 type='email'
-                className='text-xl'
+                className='text-lg cinzel-text-titles'
                 required
               />
             </div>
@@ -123,13 +123,13 @@ const RSVPForm = () => {
               <Label className='text-xl' htmlFor='code'>
                 Código de reservación
               </Label>
-              <Input id='code' name='code' className='text-xl' required />
+              <Input id='code' name='code' className='text-lg cinzel-text-titles' required />
             </div>
             <div>
               <Label className='text-xl' htmlFor='message'>
                 Mensaje (opcional)
               </Label>
-              <Textarea id='message' name='message' className='text-xl' />
+              <Textarea id='message' name='message' className='text-lg cinzel-text-titles' />
             </div>
             <Button
               type='submit'
@@ -166,10 +166,10 @@ const RSVPForm = () => {
             </Button>
           </form>
           {successMessage && (
-            <p className='text-green-700 text-xl mt-4'>{successMessage}</p>
+            <p className='text-green-700 text-lg mt-4 cinzel-text-titles'>{successMessage}</p>
           )}
           {errorMessage && (
-            <p className='text-red-700 text-xl mt-4'>{errorMessage}</p>
+            <p className='text-red-700 text-lg mt-4 cinzel-text-titles'>{errorMessage}</p>
           )}
         </DialogContent>
       </Dialog>
