@@ -93,7 +93,7 @@ const RSVPForm = () => {
         <DialogContent>
           <DialogHeader>
             <DialogTitle className='text-4xl'>
-              RSVP para nuestra boda
+              RSVP - Confirmación de Asistencia
             </DialogTitle>
             <DialogDescription className='text-lg cinzel-text-titles'>
               Por favor, completa el siguiente formulario para confirmar tu
