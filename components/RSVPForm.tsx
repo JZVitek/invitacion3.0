@@ -61,8 +61,7 @@ const RSVPForm = () => {
 
     try {
       const response = await axios.post('/api/rsvp', data);
-      console.log('Respuesta del servidor:', response.data);
-
+      
       if (response.data.status === 'success') {
         setSuccessMessage(
           '¡Tu asistencia ha sido confirmada con éxito, recibirás un correo de confirmación con tu pase de entrada!'
