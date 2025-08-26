@@ -24,6 +24,7 @@ const RSVPForm = () => {
   const [successMessage, setSuccessMessage] = useState('');
   const [isModalOpen, setIsModalOpen] = useState(false); // Estado para controlar la visibilidad del modal
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [phoneError, setPhoneError] = useState<string | null>(null);
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -35,19 +36,32 @@ const RSVPForm = () => {
     const target = e.target as typeof e.target & {
       name: { value: string };
       email: { value: string };
+      telephone: { value: string };
       code: { value: string };
       message: { value: string };
     };
 
+    // Validación de teléfono
+    const phoneValue = target.telephone.value.trim();
+    if (!/^\d{10}$/.test(phoneValue)) {
+      setPhoneError('El número debe tener exactamente 10 dígitos numéricos');
+      setIsSubmitting(false);
+      return;
+    } else {
+      setPhoneError(null);
+    }
+
     const data = {
       name: target.name.value.trim().toUpperCase(),
       email: target.email.value.trim(),
+      telephone: phoneValue,
       code: target.code.value.trim().toUpperCase(),
       message: target.message.value.trim(),
     };
 
     try {
       const response = await axios.post('/api/rsvp', data);
+      console.log('Respuesta del servidor:', response.data);
 
       if (response.data.status === 'success') {
         setSuccessMessage(
@@ -105,7 +119,12 @@ const RSVPForm = () => {
               <Label className='text-xl' htmlFor='name'>
                 Nombre
               </Label>
-              <Input id='name' name='name' className='text-lg cinzel-text-titles' required />
+              <Input
+                id='name'
+                name='name'
+                className='text-lg cinzel-text-titles'
+                required
+              />
             </div>
             <div>
               <Label className='text-xl' htmlFor='email'>
@@ -120,16 +139,40 @@ const RSVPForm = () => {
               />
             </div>
             <div>
+              <Label className='text-xl' htmlFor='telephone'>
+                Telefono
+              </Label>
+              <Input
+                type='tel'
+                id='telephone'
+                name='telephone'
+                className='text-lg cinzel-text-titles'
+                required
+              />
+              {phoneError && (
+                <span className='text-red-500 text-sm'>{phoneError}</span>
+              )}
+            </div>
+            <div>
               <Label className='text-xl' htmlFor='code'>
                 Código de reservación
               </Label>
-              <Input id='code' name='code' className='text-lg cinzel-text-titles' required />
+              <Input
+                id='code'
+                name='code'
+                className='text-lg cinzel-text-titles'
+                required
+              />
             </div>
             <div>
               <Label className='text-xl' htmlFor='message'>
                 Mensaje (opcional)
               </Label>
-              <Textarea id='message' name='message' className='text-lg cinzel-text-titles' />
+              <Textarea
+                id='message'
+                name='message'
+                className='text-lg cinzel-text-titles'
+              />
             </div>
             <Button
               type='submit'
@@ -166,10 +209,14 @@ const RSVPForm = () => {
             </Button>
           </form>
           {successMessage && (
-            <p className='text-green-700 text-lg mt-4 cinzel-text-titles'>{successMessage}</p>
+            <p className='text-green-700 text-lg mt-4 cinzel-text-titles'>
+              {successMessage}
+            </p>
           )}
           {errorMessage && (
-            <p className='text-red-700 text-lg mt-4 cinzel-text-titles'>{errorMessage}</p>
+            <p className='text-red-700 text-lg mt-4 cinzel-text-titles'>
+              {errorMessage}
+            </p>
           )}
         </DialogContent>
       </Dialog>
