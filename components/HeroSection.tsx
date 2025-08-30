@@ -7,7 +7,7 @@ export default function HeroSection() {
   const weddingDate = new Date('2025-11-09T21:00:00');
 
   return (
-    <section className='relative min-h-[100dvh] flex items-center justify-center'>
+    <section className='relative min-h-screen flex items-center justify-center'>
       <div className='absolute inset-0'>
         <Image
           src='https://img.smartslides.com/gal/aws/4k/1.5x/109968/eb92919a569ad7751c38f234f0bf81/51f321a6f263deaecb74.jpg?width=1440&height=960'
