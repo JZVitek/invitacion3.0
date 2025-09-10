@@ -101,7 +101,7 @@ export default function Home() {
                     Padres de la novia
                   </h3>
                   <p className='text-xl'>
-                    Sr y Sra. Leticia Alday y Felix Alday
+                    Leticia Alday y Felix Alday(Q.E.P.D)
                   </p>
                 </div>
                 <div>

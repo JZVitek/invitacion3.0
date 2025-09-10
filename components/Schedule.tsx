@@ -5,8 +5,9 @@ const schedule = [
   { time: '5:00', event: 'Ceremonia Religiosa', icon: Heart },
   { time: '7:00', event: 'Ceremonia Civil', icon: Heart },
   { time: '8:00', event: 'Recepción', icon: Gift },
-  { time: '23:30', event: 'Cake Cutting', icon: CakeSlice },
-  { time: '02:00', event: 'Farewell', icon: Heart },
+  { time: '9:30', event: 'Vals', icon: Clock },
+  { time: '11:00', event: 'Fuegos Artificiales', icon: Clock },
+  { time: '12:00', event: 'Baile y Fiesta', icon: Clock },
 ];
 
 export default function Schedule() {
