@@ -13,25 +13,25 @@ interface Godparent {
 const godparents: Godparent[] = [
   {
     role: 'Padrinos de Velación',
-    names: ['Olga Zamora y Apolonio Mora'],
+    names: ['Apolonio Mora y Olga Zamora'],
     image:
       'https://images.unsplash.com/photo-1469371670807-013ccf25f16a?w=800&auto=format&fit=crop&q=80',
   },
   {
     role: 'Padrinos de Arras',
-    names: ['Ericka y Adrian Villamar'],
+    names: ['Adrian Villamar y Erika Briones'],
     image:
       'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?w=800&auto=format&fit=crop&q=80',
   },
   {
     role: 'Padrinos de Lazo',
-    names: ['Lupita y Marco Ibarra'],
+    names: ['Marco Ibarra y Guadalupe Zamora'],
     image:
       'https://images.unsplash.com/photo-1523438885200-e635ba2c371e?w=800&auto=format&fit=crop&q=80',
   },
   {
     role: 'Padrinos de Anillos',
-    names: ['Dayana y Roman Alday'],
+    names: ['Roman Alday y Dayana Herrera'],
     image:
       'https://images.unsplash.com/photo-1519741497674-611481863552?w=800&auto=format&fit=crop&q=80',
   },

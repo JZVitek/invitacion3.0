@@ -50,7 +50,7 @@ export default function Home() {
                   </p>
                   <p className='flex items-center justify-center gap-2 cinzel-text-titles'>
                     <Clock className='w-4 h-4' />
-                    5:00 PM
+                    4:30 PM
                   </p>
                 </div>
                 <div>
@@ -62,7 +62,7 @@ export default function Home() {
                   </h3>
                   <p className='flex items-center justify-center gap-2 cinzel-text-titles'>
                     <Clock className='w-4 h-4' />
-                    8:00 PM
+                    7:30 PM
                   </p>
                 </div>
               </div>
@@ -101,7 +101,7 @@ export default function Home() {
                     Padres de la novia
                   </h3>
                   <p className='text-xl'>
-                    Leticia Alday y Felix Alday(Q.E.P.D)
+                    Maria Leticia Noriega y Felix Alday Vazquez
                   </p>
                 </div>
                 <div>
@@ -113,9 +113,7 @@ export default function Home() {
                   <h3 className='text-xl sm:text-2xl cinzel-text-titles mb-2'>
                     Padres del novio
                   </h3>
-                  <p className='text-xl'>
-                    Sr y Sra. Jesus Zamora & Rosa Maria Ayala
-                  </p>
+                  <p className='text-xl'>Jesús Zamora y Rosa Maria Ayala</p>
                 </div>
               </div>
             </Card>
@@ -127,20 +125,23 @@ export default function Home() {
             {/* Additional Info */}
             <Card className='p-6 sm:p-8 space-y-6'>
               <div className='text-center'>
-                <h2 className='text-5xl sm:text-5xl font-serif mb-4 texto'>
+                <h2 className='text-3xl sm:text-5xl font-serif mb-3 sm:mb-4 texto'>
                   Información adicional
                 </h2>
-                <div className='flex flex-col items-center mb-6'>
-                  <span className='text-2xl mb-2 cinzel-text-titles'>
-                    Dress Code: Negro Formal, ¡sin excepciones!
+                <div className='flex flex-col items-center mb-4 sm:mb-6'>
+                  <span className='text-lg sm:text-2xl mb-2 cinzel-text-titles'>
+                    Dress Code: <span className='font-bold'>Negro Formal</span>,
+                    ¡sin excepciones!
                   </span>
-                  <Image
-                    src='/images/dress-code.png'
-                    alt='Dress Code'
-                    width={138}
-                    height={138}
-                    className='rounded-lg'
-                  />
+                  <div className='w-32 h-32 sm:w-[138px] sm:h-[138px] flex items-center justify-center'>
+                    <Image
+                      src='/images/dress-code.png'
+                      alt='Dress Code'
+                      width={138}
+                      height={138}
+                      className='rounded-lg object-contain w-full h-full'
+                    />
+                  </div>
                 </div>
               </div>
             </Card>
@@ -163,29 +164,6 @@ export default function Home() {
                 </div>
               </div>
             </Card>
-
-            {/* Additional Info */}
-            {/*           <Card className='p-6 sm:p-8 space-y-6'>
-              <div className='text-center'>
-                <h2 className='text-4xl sm:text-4xl font-serif mb-4 texto'>
-                  Nuestra Boda
-                </h2>
-              </div>
-
-              <PhotoCarousel />
-
-              <div className='flex flex-col items-center justify-center text-center gap-4'>
-                <div className='flex flex-col items-center justify-center gap-4'>
-                  <h3 className='text-3xl sm:text-4xl font-semibold mb-2'>
-                    Compartenos tus fotos con el hashtag
-                  </h3>
-                  <p className='flex items-center justify-center gap-2 text-xl'>
-                    <Hash className='w-4 h-4 text-2xl' />
-                    KarimeAndJesus2024
-                  </p>
-                </div>
-              </div>
-            </Card> */}
 
             {/* Contact */}
             <Card className='p-6 sm:p-8 text-center'>

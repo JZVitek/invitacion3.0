@@ -62,7 +62,6 @@ const RSVPForm = () => {
     try {
       const response = await axios.post('/api/rsvp', data);
 
-      
       if (response.data.status === 'success') {
         setSuccessMessage(
           '¡Tu asistencia ha sido confirmada con éxito, recibirás un correo de confirmación con tu pase de entrada!'
@@ -86,14 +85,14 @@ const RSVPForm = () => {
   };
 
   return (
-    <Card className='p-8 text-center z-1'>
-      <h2 className='text-5xl font-serif mb-6 texto'>
+    <Card className='p-4 sm:p-8 text-center z-1 max-w-[98vw] mx-auto'>
+      <h2 className='text-3xl sm:text-5xl font-serif mb-4 sm:mb-6 texto'>
         ¡Confirma tu asistencia aqui!
       </h2>
       <Dialog open={isModalOpen} onOpenChange={setIsModalOpen}>
         <DialogTrigger asChild>
           <Button
-            className='text-2xl'
+            className='text-xl sm:text-2xl w-full max-w-xs sm:max-w-md mx-auto'
             size='lg'
             onClick={() => {
               setSuccessMessage('');
@@ -104,79 +103,84 @@ const RSVPForm = () => {
             Confirmar Asistencia
           </Button>
         </DialogTrigger>
-        <DialogContent>
+        <DialogContent className='w-full max-w-[95vw] max-h-[90vh] h-auto overflow-y-auto p-2 sm:max-w-md sm:p-6'>
           <DialogHeader>
-            <DialogTitle className='text-4xl'>
+            <DialogTitle className='text-2xl sm:text-4xl'>
               RSVP - Confirmación de Asistencia
             </DialogTitle>
-            <DialogDescription className='text-lg cinzel-text-titles'>
+            <DialogDescription className='text-base sm:text-lg cinzel-text-titles'>
               Por favor, completa el siguiente formulario para confirmar tu
               asistencia.
             </DialogDescription>
           </DialogHeader>
-          <form className='space-y-4' onSubmit={handleSubmit}>
+          <form
+            className='space-y-3 sm:space-y-4 text-left'
+            onSubmit={handleSubmit}
+          >
             <div>
-              <Label className='text-xl' htmlFor='name'>
+              <Label className='text-base sm:text-xl' htmlFor='name'>
                 Nombre
               </Label>
               <Input
                 id='name'
                 name='name'
-                className='text-lg cinzel-text-titles'
+                className='text-base sm:text-lg cinzel-text-titles w-full'
                 required
               />
             </div>
             <div>
-              <Label className='text-xl' htmlFor='email'>
+              <Label className='text-base sm:text-xl' htmlFor='email'>
                 Correo Electrónico
               </Label>
               <Input
                 id='email'
                 name='email'
                 type='email'
-                className='text-lg cinzel-text-titles'
+                className='text-base sm:text-lg cinzel-text-titles w-full'
                 required
               />
             </div>
             <div>
-              <Label className='text-xl' htmlFor='telephone'>
-                Telefono
+              <Label className='text-base sm:text-xl' htmlFor='telephone'>
+                Teléfono
               </Label>
               <Input
                 type='tel'
                 id='telephone'
                 name='telephone'
-                className='text-lg cinzel-text-titles'
+                className='text-base sm:text-lg cinzel-text-titles w-full'
                 required
               />
               {phoneError && (
-                <span className='text-red-500 text-sm'>{phoneError}</span>
+                <span className='text-red-500 text-xs sm:text-sm'>
+                  {phoneError}
+                </span>
               )}
             </div>
             <div>
-              <Label className='text-xl' htmlFor='code'>
+              <Label className='text-base sm:text-xl' htmlFor='code'>
                 Código de reservación
               </Label>
               <Input
                 id='code'
                 name='code'
-                className='text-lg cinzel-text-titles'
+                className='text-base sm:text-lg cinzel-text-titles w-full'
                 required
               />
             </div>
             <div>
-              <Label className='text-xl' htmlFor='message'>
+              <Label className='text-base sm:text-xl' htmlFor='message'>
                 Mensaje (opcional)
               </Label>
               <Textarea
                 id='message'
                 name='message'
-                className='text-lg cinzel-text-titles'
+                className='text-base sm:text-lg cinzel-text-titles w-full'
               />
             </div>
             <Button
               type='submit'
-              className='w-full text-2xl flex items-center justify-center'
+              className='w-full text-xl sm:text-2xl flex items-center justify-center'
               disabled={isSubmitting}
             >
               {isSubmitting ? (
@@ -209,24 +213,24 @@ const RSVPForm = () => {
             </Button>
           </form>
           {successMessage && (
-            <p className='text-green-700 text-lg mt-4 cinzel-text-titles'>
+            <p className='text-green-700 text-base sm:text-lg mt-3 sm:mt-4 cinzel-text-titles'>
               {successMessage}
             </p>
           )}
           {errorMessage && (
-            <p className='text-red-700 text-lg mt-4 cinzel-text-titles'>
+            <p className='text-red-700 text-base sm:text-lg mt-3 sm:mt-4 cinzel-text-titles'>
               {errorMessage}
             </p>
           )}
         </DialogContent>
       </Dialog>
       {/* Registry Section */}
-      <div className='mt-8'>
-        <h3 className='text-xl sm:text-2xl cinzel-text-titles mb-2'>
-          ¿Te gustaría hacenos un regalo?
+      <div className='mt-6 sm:mt-8'>
+        <h3 className='text-lg sm:text-2xl cinzel-text-titles mb-1 sm:mb-2'>
+          ¿Te gustaría hacernos un regalo?
         </h3>
-        <p className='mb-4 text-lg cinzel-text-titles'>
-          puedes hacerlo a través de una transferencia bancaria o en el dia de
+        <p className='mb-2 sm:mb-4 text-base sm:text-lg cinzel-text-titles'>
+          Puedes hacerlo a través de una transferencia bancaria o en el día de
           la boda
         </p>
         <RegistryModal />
