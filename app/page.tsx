@@ -36,6 +36,11 @@ export default function Home() {
               <h2 className='text-4xl sm:text-5xl font-serif texto'>
                 Nuestra Boda
               </h2>
+              <p className='text-lg sm:text-lg cinzel-text-titles'>
+                Nuestra historia apenas comienza... y queremos que seas parte
+                de ella, Tenemos el honor de invitarte a celebrar con nosotros
+                el día más especial de nuestras vidas.
+              </p>
               <div className='grid sm:grid-cols-2 gap-8'>
                 <div>
                   <div className='w-10 h-10 sm:w-12 sm:h-12  flex items-center justify-center mx-auto'>
@@ -101,7 +106,7 @@ export default function Home() {
                     Padres de la novia
                   </h3>
                   <p className='text-xl'>
-                    Maria Leticia Noriega y Felix Alday Vazquez
+                    Maria Leticia Noriega y Felix Alday Vazquez ✝
                   </p>
                 </div>
                 <div>
@@ -130,8 +135,10 @@ export default function Home() {
                 </h2>
                 <div className='flex flex-col items-center mb-4 sm:mb-6'>
                   <span className='text-lg sm:text-2xl mb-2 cinzel-text-titles'>
-                    Dress Code: <span className='font-bold'>Negro Formal</span>,
-                    ¡sin excepciones!
+                    Código de vestimenta:
+                  </span>
+                  <span className='text-lg sm:text-2xl mb-2 cinzel-text-titles'>
+                    Todos los invitados deben asistir con atuendo formal en color negro
                   </span>
                   <div className='w-32 h-32 sm:w-[138px] sm:h-[138px] flex items-center justify-center'>
                     <Image
@@ -158,7 +165,7 @@ export default function Home() {
                     </h3>
                     <p className='flex items-center justify-center gap-2 text-xl cinzel-text-titles'>
                       <Hash className='w-4 h-4 text-2xl cinzel-text-titles' />
-                      KarimeyJesus2025
+                      Karime&Jesus2025
                     </p>
                   </div>
                 </div>
