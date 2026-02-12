@@ -106,7 +106,7 @@ export default function Home() {
                     Padres de la novia
                   </h3>
                   <p className='text-xl'>
-                    Maria Leticia Noriega y Felix Alday Vazquez ✝
+                    María Leticia Noriega y Felix Alday Vazquez ✝
                   </p>
                 </div>
                 <div>
